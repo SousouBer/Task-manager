@@ -28,18 +28,10 @@
                     <form method="POST" action="#">
                         <div class="flex gap-4 flex-col py-4">
                             <div>
-                                <input
-                                    class="placeholder-gray-400 px-4 py-6 border outline-none focus:border-blue-500 w-full h-16 bg-gray-100 rounded-3xl"
-                                    type="email"
-                                    placeholder="E-mail"
-                                />
+                                <x-form.input name="email" type="email" placeholder="E-mail" />
                             </div>
                             <div class="relative">
-                                <input
-                                    class="placeholder-gray-400 px-4 py-6 border outline-none focus:border-blue-500 w-full h-16 bg-gray-100 rounded-3xl"
-                                    type="password"
-                                    placeholder="Write your Password"
-                                />
+                                <x-form.input name="password" type="password" placeholder="Write your Password" />
                                 <div
                                     class="absolute right-0 top-1/2 transform -translate-x-full -translate-y-1/2"
                                 >
@@ -51,19 +43,11 @@
                                 </div>
                             </div>
                         </div>
-
-                        <button
-                            class="transition-all hover:bg-blue-400 w-full h-16 rounded-3xl bg-blue-500 text-white text-base"
-                            type="submit"
-                        >
-                            LOG IN
-                        </button>
+                        <x-form.button>LOG IN</x-form.button>
                     </form>
                 </div>
-                <div class="mt-auto flex gap-12">
-                    <span class="cursor-pointer">English</span>
-                    <span class="cursor-pointer">ქართული</span>
-                </div>
+
+                <x-languages />
             </div>
         </div>
     </section>

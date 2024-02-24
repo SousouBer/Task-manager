@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('admin/panel', function () {
 	return view('admin.admin-panel');
 });
+
+Route::get('/admin/panel/task', function () {
+	return view('admin.task-details');
+});
