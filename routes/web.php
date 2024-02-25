@@ -24,3 +24,7 @@ Route::get('admin/panel', function () {
 Route::get('/admin/panel/task', function () {
 	return view('admin.task-details');
 });
+
+Route::get('/admin/panel/create', function () {
+	return view('create-task');
+});
