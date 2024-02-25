@@ -32,3 +32,10 @@ Route::get('/admin/panel/create', function () {
 Route::get('/admin/panel/edit', function () {
 	return view('edit-task');
 });
+
+Route::get('/admin/panel/profile', function () {
+	return view('profile');
+});
+
+// I will gradually name these routes appropraitely.
+
