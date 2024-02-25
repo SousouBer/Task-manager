@@ -1,7 +1,7 @@
-<div class="flex-grow flex flex-col p-20 pt-32">
             <div>
                 <div class="flex justify-between">
-                    <h1 class="text-3xl font-bold">YOUR TASKS</h1>
+                    <x-heading>YOUR TASKS</x-heading>
+
                     <div class="flex gap-6">
                         <button
                             class="border border-blue-400 rounded-lg py-3 px-6 font-bold text-blue-400 hover:bg-blue-300 hover:text-white hover:border-white transition-all duration-300"
@@ -12,7 +12,7 @@
                             class="flex gap-4 rounded-lg py-3 px-6 font-bold bg-blue-400 text-white hover:bg-blue-300 transition-all duration-300"
                         >
                             <img
-                                src="/images/plus-circle.png"
+                                src="{{asset('/images/plus-circle.png')}}"
                                 alt="Plus icon"
                             />
                             ADD TASK
@@ -55,5 +55,5 @@
                         </tr>
                     </tbody>
                 </table>
+                
             </div>
-    </div>

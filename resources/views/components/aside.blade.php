@@ -1,4 +1,4 @@
-<aside class="h-full py-8 px-8 flex flex-col bg-gray-100 rounded-xl">
+<aside class="h-full py-8 px-8 flex flex-col bg-gray-100 rounded-xl flex-shrink-0">
             <div>
                 <div class="flex items-center justify-center mb-20">
                     <div>
