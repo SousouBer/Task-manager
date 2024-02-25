@@ -4,7 +4,7 @@
             <div class="flex-1 flex justify-end">
                 <img
                     class="self-end"
-                    src="/images/Intersect.png"
+                    src="{{ asset('/images/Intersect.png')}}"
                     alt="Login cover"
                 />
             </div>
@@ -22,7 +22,7 @@
                             >
                         </div>
                         <div>
-                            <img src="/images/Group.png" alt="Smile icon" />
+                            <img src="{{ asset('/images/Group.png')}}" alt="Smile icon" />
                         </div>
                     </div>
                     <form method="POST" action="#">
@@ -37,7 +37,7 @@
                                 >
                                     <img
                                         class="cursor-pointer"
-                                        src="/images/eye.png"
+                                        src="{{ asset('/images/eye.png')}}"
                                         alt="Eye icon"
                                     />
                                 </div>
