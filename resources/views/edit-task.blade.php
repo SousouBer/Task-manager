@@ -2,7 +2,7 @@
     <div class="flex items-center flex-col justify-center">
         <x-back link="#" />
 
-        <x-heading class="mb-14">CREATE TASK</x-heading>
+        <x-heading class="mb-14">EDIT TASK</x-heading>
 
         <form method="POST" action="#" class="w-2/4">
             <div class="flex flex-col gap-4 mb-5">
@@ -29,7 +29,7 @@
 
                 <x-form.input name="date" type="date" placeholder="Due date" />
             </div>
-            <x-form.button>CREATE TASK</x-form.button>
+            <x-form.button>EDIT CHANGES</x-form.button>
         </form>
     </div>
 </x-layout>

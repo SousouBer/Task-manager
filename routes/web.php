@@ -28,3 +28,7 @@ Route::get('/admin/panel/task', function () {
 Route::get('/admin/panel/create', function () {
 	return view('create-task');
 });
+
+Route::get('/admin/panel/edit', function () {
+	return view('edit-task');
+});
