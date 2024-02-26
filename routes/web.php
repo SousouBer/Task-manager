@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +23,5 @@ Route::prefix('admin/panel')->group(function(){
 	Route::view('edit', 'edit-task')->name('edit_task');
 	Route::view('profile', 'profile')->name('profile');
 });
+
+Route::get('change/{locale}', [LanguageController::class, 'setLocale'])->name('change_language');

@@ -1,4 +1,4 @@
 <div class="mt-auto flex gap-12 self-end">
-    <span class="cursor-pointer">English</span>
-    <span class="cursor-pointer">ქართული</span>
+    <a href="{{ route('change_language', ['locale' => 'en']) }}">English</a>
+    <a href="{{ route('change_language', ['locale' => 'ka']) }}">ქართული</a>
 </div>
