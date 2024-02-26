@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::view('/', 'login.index')->name('login');
+
+Route::prefix('admin/panel')->group(function(){
+	Route::view('/', 'admin.admin-panel')->name('admin_panel');
+	Route::view('task', 'admin.task-details')->name('task_details');
+	Route::view('create', 'create-task')->name('create_task');
+	Route::view('edit', 'edit-task')->name('edit_task');
+	Route::view('profile', 'profile')->name('profile');
 });
