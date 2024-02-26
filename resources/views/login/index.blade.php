@@ -14,7 +14,7 @@
                 <div class="w-4/5 mt-auto">
                     <div class="flex items-center justify-between pb-7">
                         <div>
-                            <h1 class="text-4xl font-bold mb-1">
+                            <h1 class="text-4xl font-bold mb-1 uppercase">
                                 {{ __('auth.welcome') }}!
                             </h1>
                             <span class="text-base text-gray-600"

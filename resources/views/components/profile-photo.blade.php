@@ -10,5 +10,5 @@
         <img src="{{ asset('/images/upload.png') }}" alt="Plus icon" />
         {{ $slot }}
     </button>
-    <x-table.table-button class="border-none">DELETE</x-table.table-button>
+    <x-table.table-button class="border-none">{{ __('profile.delete') }}</x-table.table-button>
 </div>
