@@ -5,7 +5,7 @@
             <button
                 class="flex gap-4 rounded-lg py-3 px-6 font-bold text-blue-300 border border-blue-300 transition-all duration-300"
             >
-                <img src="/images/edit.png" alt="Plus icon" />
+                <img src="{{ asset('/images/edit.png')}}" alt="Plus icon" />
                 EDIT TASK
             </button>
         </div>

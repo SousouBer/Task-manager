@@ -1,6 +1,6 @@
 <x-layout>
     <div class="flex items-center flex-col justify-center">
-        <x-back link="#" />
+        <x-back-button link="#" />
 
         <x-heading class="mb-14">EDIT TASK</x-heading>
 

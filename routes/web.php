@@ -13,29 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-	return view('login.index');
+Route::view('/', 'login.index')->name('login');
+
+Route::prefix('admin/panel')->group(function(){
+	Route::view('/', 'admin.admin-panel')->name('admin_panel');
+	Route::view('task', 'admin.task-details')->name('task_details');
+	Route::view('create', 'create-task')->name('create_task');
+	Route::view('edit', 'edit-task')->name('edit_task');
+	Route::view('profile', 'profile')->name('profile');
 });
-
-Route::get('admin/panel', function () {
-	return view('admin.admin-panel');
-});
-
-Route::get('/admin/panel/task', function () {
-	return view('admin.task-details');
-});
-
-Route::get('/admin/panel/create', function () {
-	return view('create-task');
-});
-
-Route::get('/admin/panel/edit', function () {
-	return view('edit-task');
-});
-
-Route::get('/admin/panel/profile', function () {
-	return view('profile');
-});
-
-// I will gradually name these routes appropraitely.
-
