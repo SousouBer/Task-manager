@@ -15,7 +15,6 @@
                     <div class="flex items-center justify-between pb-7">
                         <div>
                             <h1 class="text-4xl font-bold mb-1">
-                                {{-- {{ mb_strtoupper("welcome back!") }} --}}
                                 {{ __('auth.welcome') }}!
                             </h1>
                             <span class="text-base text-gray-600"

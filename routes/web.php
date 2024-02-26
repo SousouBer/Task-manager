@@ -24,4 +24,4 @@ Route::prefix('admin/panel')->group(function(){
 	Route::view('profile', 'profile')->name('profile');
 });
 
-Route::get('change/{locale}', [LanguageController::class, 'setLocale']);
+Route::get('change/{locale}', [LanguageController::class, 'setLocale'])->name('change_language');
