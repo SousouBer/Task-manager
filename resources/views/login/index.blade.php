@@ -15,10 +15,11 @@
                     <div class="flex items-center justify-between pb-7">
                         <div>
                             <h1 class="text-4xl font-bold mb-1">
-                                {{ mb_strtoupper("welcome back!") }}
+                                {{-- {{ mb_strtoupper("welcome back!") }} --}}
+                                {{ __('auth.welcome') }}!
                             </h1>
                             <span class="text-base text-gray-600"
-                                >Please, enter your details</span
+                                >{{ __('auth.your_details') }}</span
                             >
                         </div>
                         <div>
@@ -28,10 +29,10 @@
                     <form method="POST" action="#">
                         <div class="flex gap-4 flex-col py-4">
                             <div>
-                                <x-form.input name="email" type="email" placeholder="E-mail" />
+                                <x-form.input name="email" type="email" placeholder="{{ __('auth.email') }}" />
                             </div>
                             <div class="relative">
-                                <x-form.input name="password" type="password" placeholder="Write your Password" />
+                                <x-form.input name="password" type="password" placeholder="{{ __('auth.password') }}" />
                                 <div
                                     class="absolute right-0 top-1/2 transform -translate-x-full -translate-y-1/2"
                                 >
@@ -43,7 +44,7 @@
                                 </div>
                             </div>
                         </div>
-                        <x-form.button>LOG IN</x-form.button>
+                        <x-form.button>{{ __('auth.log_in') }}</x-form.button>
                     </form>
                 </div>
 

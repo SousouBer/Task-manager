@@ -1,4 +1,4 @@
 <div class="mt-auto flex gap-12 self-end">
-    <span class="cursor-pointer">English</span>
-    <span class="cursor-pointer">ქართული</span>
+    <a href="change/en">English</a>
+    <a href="change/ka">ქართული</a>
 </div>
