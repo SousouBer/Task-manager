@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'login.index')->name('login');
+// Route::view('/', 'login.index')->name('login');
 
-Route::prefix('admin/panel')->group(function(){
+Route::name('login')->controller(LoginController::class)->group(function(){
+	Route::get('/', 'index');
+	Route::post('/', 'login');
+});
+
+Route::prefix('admin/panel')->group(function () {
 	Route::view('/', 'admin.admin-panel')->name('admin_panel');
 	Route::view('task', 'admin.task-details')->name('task_details');
 	Route::view('create', 'create-task')->name('create_task');
