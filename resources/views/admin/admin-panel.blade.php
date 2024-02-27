@@ -1,3 +1,3 @@
 <x-layout>
-    <x-table-dashboard />
+    <x-table-dashboard :tasks="$tasks"/>
 </x-layout>
