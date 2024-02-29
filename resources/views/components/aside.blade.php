@@ -19,7 +19,7 @@
                             </div>
                             <li class="cursor-pointer text-gray-900">
                                 
-                                <a href="{{ route('admin_panel', ['dueTasks' => 'due-tasks']) }}">{{ __('admin.due_tasks') }}</a>
+                                <a href="{{ route('admin_panel', ['dueTasks' => true]) }}">{{ __('admin.due_tasks') }}</a>
                             </li>
                         </div>
                         <div class="flex items-center gap-2 text-lg">
