@@ -17,7 +17,7 @@ class TaskController extends Controller
         ]);
     }
 
-    public function task(Task $task) : View
+    public function edit(Task $task) : View
     {
         return view('admin.task-details', [
             'task' => $task
