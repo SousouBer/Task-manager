@@ -16,4 +16,5 @@ class TaskController extends Controller
             'tasks' => $task,
         ]);
     }
+
 }
