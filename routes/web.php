@@ -21,8 +21,11 @@ Route::view('/', 'login.index')->name('login');
 Route::prefix('admin/panel')->group(function () {
 	Route::get('/', [TaskController::class, 'index'])->name('admin_panel');
 	Route::view('task', 'admin.task-details')->name('task_details');
-	Route::get('create', [CreateTaskController::class, 'index'])->name('create_task');
-	Route::post('create', [CreateTaskController::class, 'store'])->name('create_task');
+
+	Route::prefix('create')->controller(CreateTaskController::class)->name('create_task')->group(function () {
+		Route::get('/', 'index');
+		Route::post('/', 'store');
+	});
 
 	Route::view('edit', 'edit-task')->name('edit_task');
 	Route::view('profile', 'profile')->name('profile');
