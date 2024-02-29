@@ -16,9 +16,7 @@
                         type="text"
                         placeholder="{{ __('tasks.task_name_englisch') }}"
                     />
-                    @error('name')
-                    <p>{{ $message }}</p>
-                    @enderror
+                    <x-error-message name="name-en" />
                 </div>
                 <div>
                     <x-form.input
@@ -26,29 +24,21 @@
                         type="text"
                         placeholder="{{ __('tasks.task_name_georgian') }}"
                     />
-                    @error('name-ka')
-                    <p>{{ $message }}</p>
-                    @enderror
+                    <x-error-message name="name-ka" />
                 </div>
                 <div>
                     <x-form.textarea
-                        name="description"
+                        name="description-en"
                         placeholder="{{ __('tasks.description_english') }}"
                     />
-
-                    @error('description-en')
-                    <p>{{ $message }}</p>
-                    @enderror
+                    <x-error-message name="description-en" />
                 </div>
                 <div>
                     <x-form.textarea
                         name="description-ka"
                         placeholder="{{ __('tasks.description_georgian') }}"
                     />
-
-                    @error('description-ka')
-                    <p>{{ $message }}</p>
-                    @enderror
+                    <x-error-message name="description-ka" />
                 </div>
                 <div>
                     <x-form.input
@@ -56,10 +46,7 @@
                         type="date"
                         placeholder="Due date"
                     />
-
-                    @error('due_date')
-                    <p>{{ $message }}</p>
-                    @enderror
+                    <x-error-message name="due_date" />
                 </div>
             </div>
             <x-form.button>{{ __("tasks.create_task") }}</x-form.button>

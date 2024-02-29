@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePostRequest;
 use App\Models\Task;
 use App\Rules\GeorgianLetters;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 
 class CreateTaskController extends Controller
 {
@@ -14,17 +16,11 @@ class CreateTaskController extends Controller
 		return view('create-task');
 	}
 
-	public function store(): RedirectResponse
-	{
-		$attributes = request()->validate([
-			'name-en'        => 'required|min:3|alpha',
-			'name-ka'        => ['required', 'min:3', new GeorgianLetters],
-			'description-en' => 'required|min:3|alpha',
-			'description-ka' => ['required', 'min:3', new GeorgianLetters],
-			'due_date'       => 'required',
-		]);
+	public function store(StorePostRequest $request): RedirectResponse
+	{		
+		$validated = $request->validated();
 
-		Task::create($attributes);
+		Task::create($validated);
 
 		return redirect()->route('admin_panel');
 	}
