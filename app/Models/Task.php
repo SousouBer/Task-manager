@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-    use HasFactory;
+	use HasFactory;
+
+	public function scopeFilter($query)
+	{
+		$query->where('due_date', '>', now());
+	}
 }

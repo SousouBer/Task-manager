@@ -38,7 +38,7 @@
                                 <x-table.tdata>{{ $task->name }}</x-table.tdata>
                                 <x-table.tdata>{{ $task->description }}</x-table.tdata>
                                 <x-table.tdata>{{ $task->created_at->format('Y-m-d') }}</x-table.tdata>
-                                <x-table.tdata>{{ $task->due_date }}</x-table.tdata>
+                                <x-table.tdata style="{{ $task->due_date < now() ? 'color: red;' : '' }}">{{ $task->due_date }}</x-table.tdata>
                                 <x-table.tdata>
                                     <x-table.table-button>{{ __('tasks.delete') }}</x-table-button>
                                     <x-table.table-button>{{ __('tasks.edit') }}</x-table-button>

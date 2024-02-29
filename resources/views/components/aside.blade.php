@@ -18,7 +18,8 @@
                                 <img src="{{ asset('/images/due.png')}}" alt="Due tasks" />
                             </div>
                             <li class="cursor-pointer text-gray-900">
-                                {{ __('admin.due_tasks') }}
+                                
+                                <a href="{{ route('due_tasks') }}">{{ __('admin.due_tasks') }}</a>
                             </li>
                         </div>
                         <div class="flex items-center gap-2 text-lg">
