@@ -50,6 +50,5 @@
                 </table>
                 <div>
                     {{ $tasks->links() }}
-
                 </div>                
             </div>

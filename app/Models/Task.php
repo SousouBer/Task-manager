@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,8 +10,8 @@ class Task extends Model
 {
 	use HasFactory;
 
-	public function scopeFilter($query)
+	public function scopeFilter(Builder $query) : Builder
 	{
-		$query->where('due_date', '>', now());
+		return $query->where('due_date', '>', now());
 	}
 }

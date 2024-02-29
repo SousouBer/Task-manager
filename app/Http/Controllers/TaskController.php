@@ -7,19 +7,18 @@ use Illuminate\Contracts\View\View;
 
 class TaskController extends Controller
 {
-	public function index(): View
+	public function index($dueTasks = null): View
 	{
-		$task = Task::latest()->paginate(5);
+		$task = Task::latest();
+
+		if ($dueTasks === null) {
+			$task = Task::latest()->paginate(5);
+		} else {
+			$task = Task::latest()->filter()->paginate(5);
+		}
 
 		return view('admin.admin-panel', [
 			'tasks' => $task,
-		]);
-	}
-
-	public function indexDueTasks() : View
-	{
-		return view('admin.due-tasks', [
-			'tasks' => Task::latest()->filter()->paginate(5),
 		]);
 	}
 }
