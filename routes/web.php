@@ -22,7 +22,7 @@ Route::prefix('admin/panel')->group(function () {
 	Route::get('/', [TaskController::class, 'index'])->name('admin_panel');
 	Route::view('task', 'admin.task-details')->name('task_details');
 
-	Route::prefix('create')->controller(CreateTaskController::class)->name('create_task')->group(function () {
+	Route::prefix('create')->controller(CreateTaskController::class)->name('tasks')->group(function () {
 		Route::get('/', 'index')->name('index');
 		Route::post('/', 'store')->name('store');
 	});
