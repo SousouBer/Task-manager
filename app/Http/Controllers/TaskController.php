@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DueTasksRequest;
 use App\Models\Task;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-	public function index(Request $request): View
+	public function index(DueTasksRequest $request): View
 	{
-		$dueTasks = $request->query('dueTasks');
+		$dueTasks = $request->input('dueTasks');
 
 		$task = Task::latest();
 
