@@ -11,14 +11,16 @@
                             <div>
                                 <img src="{{ asset('/images/tasks.png')}}" alt="Tasks" />
                             </div>
-                            <li class="text-lg text-gray-900">{{ __('admin.my_tasks') }}</li>
+                            <li class="text-lg text-gray-900">
+                                <a href="{{ route('admin_panel') }}">{{ __('admin.my_tasks') }}</a>
+                            </li>
                         </div>
                         <div class="flex items-center gap-2 text-lg">
                             <div>
                                 <img src="{{ asset('/images/due.png')}}" alt="Due tasks" />
                             </div>
                             <li class="cursor-pointer text-gray-900">
-                                {{ __('admin.due_tasks') }}
+                                <a href="#">{{ __('admin.due_tasks') }}</a>
                             </li>
                         </div>
                         <div class="flex items-center gap-2 text-lg">
@@ -26,7 +28,7 @@
                                 <img src="{{ asset('/images/profile.png')}}" alt="Profile" />
                             </div>
                             <li class="cursor-pointer text-gray-900">
-                                {{ __('admin.profile') }}
+                               <a href="{{ route('profile') }}"> {{ __('admin.profile') }}</a>
                             </li>
                         </div>
                     </ul>

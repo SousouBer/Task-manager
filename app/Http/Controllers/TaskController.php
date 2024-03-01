@@ -7,12 +7,19 @@ use Illuminate\Contracts\View\View;
 
 class TaskController extends Controller
 {
-	public function index(): View
-	{
-		$task = Task::paginate(5);
+    public function index() : View
+    {
+        $task = Task::paginate(5);
+        
+        return view('admin.admin-panel', [
+            'tasks' => $task,
+        ]);
+    }
 
-		return view('admin.admin-panel', [
-			'tasks' => $task,
-		]);
-	}
+    public function edit(Task $task) : View
+    {
+        return view('admin.task-details', [
+            'task' => $task
+        ]);
+    }
 }
