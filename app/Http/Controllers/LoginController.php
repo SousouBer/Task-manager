@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -14,16 +15,13 @@ class LoginController extends Controller
 		return view('login.index');
 	}
 
-	public function login() : RedirectResponse
+	public function login(LoginRequest $request) : RedirectResponse
 	{
-		$attributes = request()->validate([
-			'email'    => 'required|email',
-			'password' => 'required|min:4',
-		]);
+		$validated = $request->validated();
 
-		$user = User::where('email', $attributes['email'])->first();
+		$user = User::where('email', $validated['email'])->first();
 
-		if (!$user || !Hash::check($attributes['password'], $user->password)) {
+		if (!$user || !Hash::check($validated['password'], $user->password)) {
 			return back()->withErrors(['email' => 'Email or password is invalid. Try again.']);
 		}
 
