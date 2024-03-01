@@ -2,9 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Task;
+use Illuminate\Contracts\View\View;
 
 class TaskController extends Controller
 {
-    //
+    public function index() : View
+    {
+        $task = Task::paginate(5);
+        
+        return view('admin.admin-panel', [
+            'tasks' => $task,
+        ]);
+    }
+
+    public function edit(Task $task) : View
+    {
+        return view('admin.task-details', [
+            'task' => $task
+        ]);
+    }
 }
