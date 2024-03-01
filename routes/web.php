@@ -17,15 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'login.index')->name('login');
 
-
-
-
-Route::prefix('admin/panel')->group(function(){
+Route::prefix('tasks')->group(function () {
 	Route::get('/', [TaskController::class, 'index'])->name('admin_panel');
-	Route::view('task', 'admin.task-details')->name('task_details');
+	Route::get('{task}', [TaskController::class, 'edit'])->name('task_details');
 	Route::view('create', 'create-task')->name('create_task');
 	Route::view('edit', 'edit-task')->name('edit_task');
-	Route::view('profile', 'profile')->name('profile');
 });
 
+Route::view('profile', 'profile')->name('profile');
 Route::get('change/{locale}', [LanguageController::class, 'setLocale'])->name('change_language');
