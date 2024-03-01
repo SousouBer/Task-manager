@@ -42,7 +42,7 @@
                                 <x-table.tdata>
                                     <x-table.table-button>{{ __('tasks.delete') }}</x-table-button>
                                     <x-table.table-button>{{ __('tasks.edit') }}</x-table-button>
-                                    <x-table.table-button>{{ __('tasks.show') }}</x-table-button>
+                                    <x-table.table-button route="{{ route('task_details', ['task' => $task->id]) }}">{{ __('tasks.show') }}</x-table-button>
                                 </x-table.tdata>                           
                             </tr>
                         @endforeach
