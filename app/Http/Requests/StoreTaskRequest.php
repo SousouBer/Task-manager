@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Rules\GeorgianLetters;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StorePostRequest extends FormRequest
+class StoreTaskRequest extends FormRequest
 {
 	/**
 	 * Determine if the user is authorized to make this request.

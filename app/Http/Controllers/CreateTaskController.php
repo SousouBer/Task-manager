@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorePostRequest;
+use App\Http\Requests\StoreTaskRequest;
 use App\Models\Task;
-use App\Rules\GeorgianLetters;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 
 class CreateTaskController extends Controller
 {
@@ -16,8 +14,8 @@ class CreateTaskController extends Controller
 		return view('create-task');
 	}
 
-	public function store(StorePostRequest $request): RedirectResponse
-	{		
+	public function store(StoreTaskRequest $request): RedirectResponse
+	{
 		$validated = $request->validated();
 
 		Task::create($validated);
