@@ -41,11 +41,9 @@
                                 <x-table.tdata>{{ $task->created_at->format('Y-m-d') }}</x-table.tdata>
                                 <x-table.tdata style="{{ $task->due_date < now() ? 'color: red;' : '' }}">{{ $task->due_date }}</x-table.tdata>
                                 <x-table.tdata>
-                                    {{-- <x-table.table-button>{{ __('tasks.delete') }}</x-table-button> --}}
                                     <form method="POST" action="{{ route('task_delete', ['task' => $task->id]) }}">
                                         @csrf
                                         @method('DELETE')
-                                        {{-- <x-table.table-button>{{ __('tasks.delete') }}</x-table-button> --}}
                                         <button class="mr-3 text-gray-700 border-b border-gray-600 font-normal hover:text-gray-600">Delete</button>
                                     </form>
                                     <x-table.table-button route="{{ route('edit', ['task' => $task->id]) }}" >{{ __('tasks.edit') }}</x-table-button>

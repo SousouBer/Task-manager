@@ -19,31 +19,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth')->group(function(){
-// 	Route::prefix('admin/panel')->group(function () {
-// 		Route::get('/', [TaskController::class, 'index'])->name('admin_panel');
-// 		Route::get('{task}', [TaskController::class, 'show'])->name('task_details');
-
-// 		Route::prefix('create')->controller(CreateTaskController::class)->name('tasks.')->group(function () {
-// 			Route::get('/', 'index')->name('index');
-// 			Route::post('/', 'store')->name('store');
-// 		});
-
-// 		Route::view('edit', 'edit-task')->name('tasks.edit');
-// 		Route::view('profile', 'profile')->name('profile');
-// 	});
-// });
-
-// Route::name('login.')->controller(LoginController::class)->group(function () {
-// 	Route::get('/', 'index')->name('index');
-// 	Route::post('/', 'login')->name('submit');
-// 	Route::post('/logout', 'destroy')->name('logout');
-// });
-
 Route::controller(LoginController::class)->group(function () {
-	Route::middleware('guest')->group(function(){
-		Route::get('/login', 'index')->name('login');
-		Route::post('/login', 'login')->name('submit');
+	Route::middleware('guest')->prefix('login')->group(function(){
+		Route::get('/', 'index')->name('login');
+		Route::post('/', 'login')->name('submit');
 	});
 
 	Route::post('logout', 'destroy')->name('logout');
@@ -59,8 +38,8 @@ Route::middleware('auth')->group(function () {
 		});
 		
 		Route::prefix('edit')->controller(EditTaskController::class)->group(function(){
-			Route::get('{task}', 'edit')->name('edit');
-			Route::patch('/', 'store')->name('edit_task');
+			Route::get('{task}', 'index')->name('edit');
+			Route::patch('/', 'edit')->name('edit_task');
 		});
 		
 		Route::get('{task}', [TaskController::class, 'show'])->name('task_details');
