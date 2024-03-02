@@ -34,9 +34,13 @@
                         </div>
                     </ul>
                 </div>
-            </div>
-            <div class="flex items-center gap-2 mt-auto">
+            </div>             
+            <form method="POST" action="{{ route('logout') }}" class="mt-auto">
+            @csrf  
+            <div class="flex items-center gap-2 ">
                 <img src="{{ asset('/images/logout.png')}}" alt="Logout icon" />
-                <span class="text-gray-900 text-lg cursor-pointer">{{ __('admin.log_out') }}</span>
+                <button class="text-gray-900 text-lg">{{ __('admin.log_out') }}</button>
+                
             </div>
+            </form>            
         </aside>

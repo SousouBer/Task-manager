@@ -5,20 +5,21 @@
                     <x-heading>{{ __('tasks.your_tasks') }}</x-heading>
 
                     <div class="flex gap-6">
-                        <button
-                            class="border border-blue-400 rounded-lg py-3 px-6 font-bold text-blue-400 hover:bg-blue-300 hover:text-white hover:border-white transition-all duration-300"
+                        <a
+                            class="cursor-pointer border border-blue-400 rounded-lg py-3 px-6 font-bold text-blue-400 hover:bg-blue-300 hover:text-white hover:border-white transition-all duration-300"
                         >
                             {{ __('tasks.delete_old_tasks') }}
-                        </button>
-                        <button
-                            class="flex gap-4 rounded-lg py-3 px-6 font-bold bg-blue-400 text-white hover:bg-blue-300 transition-all duration-300"
+                        </a>
+                        <a
+                            href="{{ route('create') }}"
+                            class="whitespace-nowrap items-center cursor-pointer flex gap-4 rounded-lg py-3 px-6 font-bold bg-blue-400 text-white hover:bg-blue-300 transition-all duration-300"
                         >
                             <img
                                 src="{{asset('/images/plus-circle.png')}}"
                                 alt="Plus icon"
                             />
                             {{ __('tasks.add_task') }}
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <table class="min-w-full">
@@ -41,7 +42,7 @@
                                 <x-table.tdata style="{{ $task->due_date < now() ? 'color: red;' : '' }}">{{ $task->due_date }}</x-table.tdata>
                                 <x-table.tdata>
                                     <x-table.table-button>{{ __('tasks.delete') }}</x-table-button>
-                                    <x-table.table-button>{{ __('tasks.edit') }}</x-table-button>
+                                    <x-table.table-button route="{{ route('edit', ['task' => $task->id]) }}" >{{ __('tasks.edit') }}</x-table-button>
                                     <x-table.table-button route="{{ route('task_details', ['task' => $task->id]) }}">{{ __('tasks.show') }}</x-table-button>
                                 </x-table.tdata>                           
                             </tr>
