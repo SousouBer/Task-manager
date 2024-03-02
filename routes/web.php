@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::controller(LoginController::class)->group(function () {
-	Route::middleware('guest')->prefix('login')->group(function(){
+	Route::middleware('guest')->prefix('login')->group(function () {
 		Route::get('/', 'index')->name('login');
 		Route::post('/', 'login')->name('submit');
 	});
@@ -29,22 +29,21 @@ Route::controller(LoginController::class)->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-	Route::get('/', [TaskController::class, 'index'])->name('admin_panel');	
+	Route::get('/', [TaskController::class, 'index'])->name('admin_panel');
 
-	Route::prefix('tasks')->group(function(){		
-		Route::prefix('create')->controller(CreateTaskController::class)->group(function(){
+	Route::prefix('tasks')->group(function () {
+		Route::prefix('create')->controller(CreateTaskController::class)->group(function () {
 			Route::get('/', 'index')->name('create');
 			Route::post('/', 'store')->name('create_task');
 		});
-		
-		Route::prefix('edit')->controller(EditTaskController::class)->group(function(){
+
+		Route::prefix('edit')->controller(EditTaskController::class)->group(function () {
 			Route::get('{task}', 'index')->name('edit');
 			Route::patch('/', 'edit')->name('edit_task');
 		});
-		
+
 		Route::get('{task}', [TaskController::class, 'show'])->name('task_details');
 		Route::delete('{task}', [TaskController::class, 'destroy'])->name('task_delete');
-
 	});
 
 	Route::get('profile', [ProfileController::class, 'index'])->name('profile');

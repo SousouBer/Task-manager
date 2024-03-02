@@ -29,11 +29,11 @@ class TaskController extends Controller
 	public function show(Task $task): View
 	{
 		return view('admin.task-details', [
-			'task' => $task
+			'task' => $task,
 		]);
 	}
 
-	public function destroy(Task $task) : RedirectResponse
+	public function destroy(Task $task): RedirectResponse
 	{
 		$task->delete();
 

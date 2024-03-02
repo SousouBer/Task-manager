@@ -30,7 +30,7 @@ class LoginController extends Controller
 		return redirect()->route('admin_panel');
 	}
 
-	public function destroy() : RedirectResponse
+	public function destroy(): RedirectResponse
 	{
 		auth()->logout();
 
