@@ -27,6 +27,6 @@ class LoginController extends Controller
 
 		auth()->login($user);
 
-		return redirect('/admin/panel');
+		return redirect()->route('admin_panel');
 	}
 }
