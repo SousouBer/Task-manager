@@ -2,10 +2,7 @@
 
 @php 
 
-$buttonClasses = 'cursor-pointer flex flex-shrink-0 items-center
-justify-center gap-2 border border-blue-400 rounded-lg py-3 px-6 font-bold
-text-blue-400 hover:bg-blue-300 hover:text-white hover:border-white
-transition-all duration-300'; 
+$buttonClasses = 'cursor-pointer flex gap-2 border border-blue-400 rounded-lg py-3 px-6 font-bold text-blue-400 hover:bg-blue-300 hover:text-white hover:border-white'; 
 
 @endphp
 
