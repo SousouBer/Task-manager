@@ -15,8 +15,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::name('login')->controller(LoginController::class)->group(function () {
+Route::name('login.')->controller(LoginController::class)->group(function () {
 	Route::get('/', 'index')->name('index');
 	Route::post('/', 'login')->name('submit');
 });
@@ -25,7 +24,7 @@ Route::prefix('admin/panel')->group(function () {
 	Route::view('/', 'admin.admin-panel')->name('admin_panel');
 	Route::view('task', 'admin.task-details')->name('task_details');
 
-	Route::prefix('create')->controller(CreateTaskController::class)->name('tasks')->group(function () {
+	Route::prefix('create')->controller(CreateTaskController::class)->name('tasks.')->group(function () {
 		Route::get('/', 'index')->name('index');
 		Route::post('/', 'store')->name('store');
 	});
