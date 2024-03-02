@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\CreateTaskController;
 use App\Http\Controllers\LanguageController;
-use App\Http\Controllers\TaskController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,14 +15,16 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::view('/', 'login.index')->name('login');
+Route::name('login.')->controller(LoginController::class)->group(function () {
+	Route::get('/', 'index')->name('index');
+	Route::post('/', 'login')->name('submit');
+});
 
 Route::prefix('admin/panel')->group(function () {
-	Route::get('/', [TaskController::class, 'index'])->name('admin_panel');
+	Route::view('/', 'admin.admin-panel')->name('admin_panel');
 	Route::view('task', 'admin.task-details')->name('task_details');
 
-	Route::prefix('create')->controller(CreateTaskController::class)->name('tasks')->group(function () {
+	Route::prefix('create')->controller(CreateTaskController::class)->name('tasks.')->group(function () {
 		Route::get('/', 'index')->name('index');
 		Route::post('/', 'store')->name('store');
 	});
