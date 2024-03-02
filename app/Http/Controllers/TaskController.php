@@ -2,24 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DueTasksRequest;
 use App\Models\Task;
 use Illuminate\Contracts\View\View;
 
 class TaskController extends Controller
 {
-    public function index() : View
-    {
-        $task = Task::paginate(5);
-        
-        return view('admin.admin-panel', [
-            'tasks' => $task,
-        ]);
-    }
+	public function index(DueTasksRequest $request): View
+	{
+		$dueTasks = $request->input('dueTasks');
 
-    public function edit(Task $task) : View
-    {
-        return view('admin.task-details', [
-            'task' => $task
-        ]);
-    }
+		$task = Task::latest();
+
+		if (!$dueTasks) {
+			$task = Task::latest()->paginate(5);
+		} else {
+			$task = Task::latest()->filter()->paginate(5);
+		}
+
+		return view('admin.admin-panel', [
+			'tasks' => $task,
+		]);
+	}
 }
