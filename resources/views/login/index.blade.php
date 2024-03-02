@@ -25,7 +25,7 @@
                             <img src="{{ asset('/images/Group.png')}}" alt="Smile icon" />
                         </div>
                     </div>
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('submit') }}">
                         @csrf
 
                         <div class="flex gap-4 flex-col py-4">

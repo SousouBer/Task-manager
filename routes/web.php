@@ -3,7 +3,6 @@
 use App\Http\Controllers\CreateTaskController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,11 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::view('/', 'login.index')->name('login');
-
-Route::name('login')->controller(LoginController::class)->group(function(){
-	Route::get('/', 'index');
-	Route::post('/', 'login');
+Route::name('login')->controller(LoginController::class)->group(function () {
+	Route::get('/', 'index')->name('index');
+	Route::post('/', 'login')->name('submit');
 });
 
 Route::prefix('admin/panel')->group(function () {
