@@ -12,7 +12,7 @@
                                 <img src="{{ asset('/images/tasks.png')}}" alt="Tasks" />
                             </div>
                             <li class="text-lg text-gray-900">
-                                <a href="{{ route('admin_panel') }}">{{ __('admin.my_tasks') }}</a>
+                                <a href="{{ route('tasks.index') }}">{{ __('admin.my_tasks') }}</a>
                             </li>
                         </div>
                         <div class="flex items-center gap-2 text-lg">
@@ -21,7 +21,7 @@
                             </div>
                             <li class="cursor-pointer text-gray-900">
                                 
-                                <a href="{{ route('admin_panel', ['dueTasks' => true]) }}">{{ __('admin.due_tasks') }}</a>
+                                <a href="{{ route('tasks.index', ['dueTasks' => true]) }}">{{ __('admin.due_tasks') }}</a>
                             </li>
                         </div>
                         <div class="flex items-center gap-2 text-lg">

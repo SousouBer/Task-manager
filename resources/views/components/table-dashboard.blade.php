@@ -11,7 +11,7 @@
                             {{ __('tasks.delete_old_tasks') }}
                         </a>
                         <a
-                            href="{{ route('create') }}"
+                            href="{{ route('tasks.create') }}"
                             class="whitespace-nowrap items-center cursor-pointer flex gap-4 rounded-lg py-3 px-6 font-bold bg-blue-400 text-white hover:bg-blue-300 transition-all duration-300"
                         >
                             <img
@@ -41,13 +41,13 @@
                                 <x-table.tdata>{{ $task->created_at->format('Y-m-d') }}</x-table.tdata>
                                 <x-table.tdata style="{{ $task->due_date < now() ? 'color: red;' : '' }}">{{ $task->due_date }}</x-table.tdata>
                                 <x-table.tdata>
-                                    <form method="POST" action="{{ route('task_delete', ['task' => $task->id]) }}">
+                                    <form method="POST" action="{{ route('tasks.destroy', ['task' => $task->id]) }}">
                                         @csrf
                                         @method('DELETE')
                                         <button class="mr-3 text-gray-700 border-b border-gray-600 font-normal hover:text-gray-600">Delete</button>
                                     </form>
-                                    <x-table.table-button route="{{ route('edit', ['task' => $task->id]) }}" >{{ __('tasks.edit') }}</x-table-button>
-                                    <x-table.table-button route="{{ route('task_details', ['task' => $task->id]) }}">{{ __('tasks.show') }}</x-table-button>
+                                    <x-table.table-button route="{{ route('tasks.edit', ['task' => $task->id]) }}" >{{ __('tasks.edit') }}</x-table-button>
+                                    <x-table.table-button route="{{ route('tasks.show', ['task' => $task->id]) }}">{{ __('tasks.show') }}</x-table-button>
                                 </x-table.tdata>                           
                             </tr>
                         @endforeach

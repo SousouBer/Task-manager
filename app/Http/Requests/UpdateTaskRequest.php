@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Rules\GeorgianLetters;
 use Illuminate\Foundation\Http\FormRequest;
 
-class EditTaskRequest extends FormRequest
+class UpdateTaskRequest extends FormRequest
 {
 	public function rules(): array
 	{

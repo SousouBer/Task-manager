@@ -6,7 +6,7 @@
             __("tasks.edit_task")
         }}</x-heading>
 
-        <form method="POST" action="{{ route('edit_task') }}" class="w-2/4">
+        <form method="POST" action="{{ route('tasks.update', ['task' => $task->id]) }}" class="w-2/4">
             @csrf @method('PATCH')
             <div class="flex flex-col gap-4 mb-5">
                 <div>

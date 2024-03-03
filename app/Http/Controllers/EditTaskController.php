@@ -2,21 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\EditTaskRequest;
+use App\Http\Requests\UpdateTaskRequest;
+use App\Models\Task;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 
 class EditTaskController extends Controller
 {
-	public function index(): View
+	public function edit(Task $task): View
 	{
-		return view('edit-task');
+		return view('edit-task', [
+			'task' => $task,
+		]);
 	}
 
-	public function edit(EditTaskRequest $request): RedirectResponse
+	public function update(UpdateTaskRequest $request, Task $task): RedirectResponse
 	{
-		$validated = $request->validated();
+		$attributes = $request->validated();
 
-		return redirect()->route('admin_panel');
+		$task->update($attributes);
+
+		return redirect()->route('tasks.index');
 	}
 }

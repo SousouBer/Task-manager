@@ -25,7 +25,7 @@
                             <img src="{{ asset('/images/Group.png')}}" alt="Smile icon" />
                         </div>
                     </div>
-                    <form method="POST" action="{{ route('submit') }}">
+                    <form method="POST" action="{{ route('login.store') }}">
                         @csrf
 
                         <x-error-message name="invalidInputs" />

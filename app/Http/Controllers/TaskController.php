@@ -37,6 +37,6 @@ class TaskController extends Controller
 	{
 		$task->delete();
 
-		return redirect()->route('admin_panel');
+		return redirect()->route('tasks.index');
 	}
 }

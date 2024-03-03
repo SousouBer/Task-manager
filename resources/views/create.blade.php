@@ -6,7 +6,7 @@
             __("tasks.create_task")
         }}</x-heading>
 
-        <form method="POST" action="{{ route('create_task') }}" class="w-2/4">
+        <form method="POST" action="{{ route('tasks.create') }}" class="w-2/4">
             @csrf
 
             <div class="flex flex-col gap-4 mb-5">
