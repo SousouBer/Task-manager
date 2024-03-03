@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreTaskRequest;
+use App\Http\Requests\EditTaskRequest;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 
@@ -13,7 +13,7 @@ class EditTaskController extends Controller
 		return view('edit-task');
 	}
 
-	public function edit(StoreTaskRequest $request): RedirectResponse
+	public function edit(EditTaskRequest $request): RedirectResponse
 	{
 		$validated = $request->validated();
 
