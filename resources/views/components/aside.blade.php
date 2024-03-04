@@ -29,7 +29,7 @@
                                 <img src="{{ asset('/images/profile.png')}}" alt="Profile" />
                             </div>
                             <li class="cursor-pointer text-gray-900">
-                               <a href="{{ route('profile') }}"> {{ __('admin.profile') }}</a>
+                               <a href="{{ route('profile.index', ['user' => auth()->user()->id]) }}"> {{ __('admin.profile') }}</a>
                             </li>
                         </div>
                     </ul>
