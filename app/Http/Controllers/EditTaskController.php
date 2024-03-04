@@ -18,7 +18,7 @@ class EditTaskController extends Controller
 
 	public function update(UpdateTaskRequest $request, Task $task): RedirectResponse
 	{
-		$attributes = $request->validated();
+		$attributes = $request->only('name', 'description', 'due_date');
 
 		$task->update($attributes);
 

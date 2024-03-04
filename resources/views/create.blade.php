@@ -6,39 +6,39 @@
             __("tasks.create_task")
         }}</x-heading>
 
-        <form method="POST" action="{{ route('tasks.create') }}" class="w-2/4">
+        <form method="POST" action="{{ route('tasks.store') }}" class="w-2/4">
             @csrf
 
             <div class="flex flex-col gap-4 mb-5">
                 <div>
                     <x-form.input
-                        name="name-en"
+                        name="name_en"
                         type="text"
                         placeholder="{{ __('tasks.task_name_englisch') }}"
                     />
-                    <x-error-message name="name-en" />
+                    <x-error-message name="name_en" />
                 </div>
                 <div>
                     <x-form.input
-                        name="name-ka"
+                        name="name_ka"
                         type="text"
                         placeholder="{{ __('tasks.task_name_georgian') }}"
                     />
-                    <x-error-message name="name-ka" />
+                    <x-error-message name="name_ka" />
                 </div>
                 <div>
                     <x-form.textarea
-                        name="description-en"
+                        name="description_en"
                         placeholder="{{ __('tasks.description_english') }}"
                     />
-                    <x-error-message name="description-en" />
+                    <x-error-message name="description_en" />
                 </div>
                 <div>
                     <x-form.textarea
-                        name="description-ka"
+                        name="description_ka"
                         placeholder="{{ __('tasks.description_georgian') }}"
                     />
-                    <x-error-message name="description-ka" />
+                    <x-error-message name="description_ka" />
                 </div>
                 <div>
                     <x-form.input
