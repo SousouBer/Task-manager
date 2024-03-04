@@ -63,7 +63,7 @@
                 <div class="flex flex-col gap-10">
                     <x-profile-photo
                         name="profile_picture"
-                        src="{{ asset('/images/avatar.png') }}"
+                        src="{{ asset('storage/'.auth()->user()->picture) }}"
                         >{{ __("profile.upload_profile") }}</x-profile-photo
                     >
                     <x-profile-photo

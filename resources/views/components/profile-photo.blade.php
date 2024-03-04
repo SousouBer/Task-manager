@@ -1,7 +1,7 @@
 @props(['src', 'name'])
 
 <div class="flex items-center gap-10">
-    <div class="w-32">
+    <div class="w-32 rounded-full overflow-hidden">
         <img src="{{ $src }}" class="w-full" alt="Profile picture" />
     </div>
 
@@ -15,7 +15,14 @@
         <img src="{{ asset('/images/upload.png') }}" alt="Plus icon" />
         {{ $slot }}</label
     >
-    <x-table.table-button class="border-none">{{
+    <form method="POST" action="{{ route('profile.picture-destroy') }}"
+">
+    @csrf
+    @method('DELETE')
+    <button>{{__("profile.delete")}}</button>
+    </form>
+    
+    {{-- <x-table.table-button class="border-none">{{
         __("profile.delete")
-    }}</x-table.table-button>
+    }}</x-table.table-button> --}}
 </div>

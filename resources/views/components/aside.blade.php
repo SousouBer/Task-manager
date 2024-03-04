@@ -1,8 +1,8 @@
 <aside class="h-full py-8 px-8 flex flex-col bg-gray-100 rounded-xl flex-shrink-0">
             <div>
                 <div class="flex items-center justify-center mb-20">
-                    <div>
-                        <img src="{{ asset('/images/avatar.png')}}" alt="Avatar png" />
+                    <div class="w-16 overflow-hidden rounded-full">
+                        <img class="w-full" src="{{ asset('storage/'.auth()->user()->picture) }}" alt="Avatar png" />
                     </div>
                 </div>
                 <div>
