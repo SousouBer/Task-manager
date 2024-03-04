@@ -4,18 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
 use App\Models\User;
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
-	public function index() : View
-	{
-		return view('login.index');
-	}
-
-	public function login(LoginRequest $request) : RedirectResponse
+	public function login(LoginRequest $request): RedirectResponse
 	{
 		$validated = $request->validated();
 
@@ -27,6 +21,13 @@ class LoginController extends Controller
 
 		auth()->login($user);
 
-		return redirect()->route('admin_panel');
+		return redirect()->route('tasks.index');
+	}
+
+	public function logout(): RedirectResponse
+	{
+		auth()->logout();
+
+		return redirect()->route('login');
 	}
 }

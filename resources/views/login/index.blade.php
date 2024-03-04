@@ -25,21 +25,18 @@
                             <img src="{{ asset('/images/Group.png')}}" alt="Smile icon" />
                         </div>
                     </div>
-                    <form method="POST" action="{{ route('login.submit') }}">
+                    <form method="POST" action="{{ route('login.store') }}">
                         @csrf
 
+                        <x-error-message name="invalidInputs" />
                         <div class="flex gap-4 flex-col py-4">
                             <div>
-                                <x-form.input name="email" type="email" placeholder="{{ __('auth.email') }}" />
-                                @error('email')
-                                    <p>{{ $message }}</p>
-                                @enderror                              
+                                <x-form.input name="email" type="email" placeholder="{{ __('auth.email') }}" />      
+                                <x-error-message name="email" />                       
                             </div>
                             <div class="relative">
                                 <x-form.input name="password" type="password" placeholder="{{ __('auth.password') }}" />
-                                @error('password')
-                                   <p>{{ $message }}</p>
-                                @enderror  
+               
                                 <div
                                     class="absolute right-0 top-1/2 transform -translate-x-full -translate-y-1/2"
                                 >
@@ -50,7 +47,7 @@
                                     />
                                 </div>
                             </div>
-                                                      
+                            <x-error-message name="password" />                                                       
                         </div>
                         <x-form.button>{{ __('auth.log_in') }}</x-form.button>
                     </form>

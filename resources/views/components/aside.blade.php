@@ -12,7 +12,7 @@
                                 <img src="{{ asset('/images/tasks.png')}}" alt="Tasks" />
                             </div>
                             <li class="text-lg text-gray-900">
-                                <a href="{{ route('admin_panel') }}">{{ __('admin.my_tasks') }}</a>
+                                <a href="{{ route('tasks.index') }}">{{ __('admin.my_tasks') }}</a>
                             </li>
                         </div>
                         <div class="flex items-center gap-2 text-lg">
@@ -21,7 +21,7 @@
                             </div>
                             <li class="cursor-pointer text-gray-900">
                                 
-                                <a href="{{ route('admin_panel', ['dueTasks' => true]) }}">{{ __('admin.due_tasks') }}</a>
+                                <a href="{{ route('tasks.index', ['dueTasks' => true]) }}">{{ __('admin.due_tasks') }}</a>
                             </li>
                         </div>
                         <div class="flex items-center gap-2 text-lg">
@@ -34,9 +34,12 @@
                         </div>
                     </ul>
                 </div>
-            </div>
-            <div class="flex items-center gap-2 mt-auto">
+            </div>             
+            <form method="POST" action="{{ route('logout') }}" class="mt-auto">
+            @csrf  
+            <div class="flex items-center gap-2 ">
                 <img src="{{ asset('/images/logout.png')}}" alt="Logout icon" />
-                <span class="text-gray-900 text-lg cursor-pointer">{{ __('admin.log_out') }}</span>
+                <button class="text-gray-900 text-lg">{{ __('admin.log_out') }}</button>                
             </div>
+            </form>            
         </aside>

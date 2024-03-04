@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\DueTasksRequest;
 use App\Models\Task;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class TaskController extends Controller
 {
@@ -23,5 +24,19 @@ class TaskController extends Controller
 		return view('admin.admin-panel', [
 			'tasks' => $task,
 		]);
+	}
+
+	public function show(Task $task): View
+	{
+		return view('admin.task-details', [
+			'task' => $task,
+		]);
+	}
+
+	public function destroy(Task $task): RedirectResponse
+	{
+		$task->delete();
+
+		return redirect()->route('tasks.index');
 	}
 }
