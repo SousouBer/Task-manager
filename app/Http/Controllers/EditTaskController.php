@@ -20,7 +20,17 @@ class EditTaskController extends Controller
 	{
 		$attributes = $request->validated();
 
-		$task->update($attributes);
+		$task->update([
+			'name' => [
+				'en' => $attributes['name_en'],
+				'ka' => $attributes['name_ka'],
+			],
+			'description' => [
+				'en' => $attributes['description_en'],
+				'ka' => $attributes['description_ka'],
+			],
+			'due_date' => $attributes['due_date'],
+		]);
 
 		return redirect()->route('tasks.index');
 	}
