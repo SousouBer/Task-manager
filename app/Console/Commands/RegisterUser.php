@@ -8,14 +8,16 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterUser extends Command
 {
-	protected $signature = 'register:user {email} {password}';
+	protected $signature = 'register:user';
 
 	protected $description = 'Register a user in the database';
 
 	public function handle()
 	{
-		$email = $this->argument('email');
-		$password = $this->argument('password');
+		$this->info('To register, type the email and password.');
+
+		$email = $this->ask('Type the email');
+		$password = $this->ask('Type the password');
 
 		$validator = Validator::make([
 			'email'    => $email,
