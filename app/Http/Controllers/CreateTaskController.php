@@ -10,10 +10,10 @@ class CreateTaskController extends Controller
 {
 	public function store(StoreTaskRequest $request): RedirectResponse
 	{
-		$validated = $request->validated();
+		$attributes = $request->only('name', 'description', 'due_date');
 
-		Task::create($validated);
+		Task::create($attributes);
 
-		return redirect()->route('admin_panel');
+		return redirect()->route('tasks.index');
 	}
 }
