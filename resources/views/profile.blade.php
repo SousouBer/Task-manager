@@ -60,29 +60,19 @@
                     }}</span>
                 </div>
                 <div class="flex flex-col gap-10">
-                <div class="flex items-center gap-8">
                     <x-profile-photo
-                    type="profile"
+                        type="profile"
                         name="profile_picture"
                         src="{{ asset('storage/'.auth()->user()->picture) }}"
                         >{{ __("profile.upload_profile") }}</x-profile-photo
                     >
 
-                    {{-- <x-table.table-button route="{{ route('profile.picture-destroy', ['pictureType' => 'profile']) }}" class="border-none">{{
-                        __("profile.delete")
-                    }}</x-table.table-button> --}}
-                    </div>
-                    <div class="flex items-center gap-8">
                     <x-profile-photo
-                  type="cover"
+                        type="cover"
                         name="cover_picture"
                         src="{{ asset('storage/'.'images/cover.png')}}"
                         >{{ __("profile.upload_profile") }}</x-profile-photo
                     >
-                    {{-- <x-table.table-button route="{{ route('profile.picture-destroy', ['pictureType' => 'cover']) }}" class="border-none">{{
-                        __("profile.delete")
-                    }}</x-table.table-button> --}}
-                    </div>
                 </div>
             </div>
             <x-form.button>{{ __("profile.change") }}</x-form.button>
