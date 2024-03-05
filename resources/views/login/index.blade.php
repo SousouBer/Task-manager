@@ -4,7 +4,7 @@
             <div class="flex-1 flex justify-end">
                 <img
                     class="self-end"
-                    src="{{ asset('/images/Intersect.png')}}"
+                    src="{{ asset('storage/'.'images/cover.png')}}"
                     alt="Login cover"
                 />
             </div>

@@ -15,14 +15,4 @@
         <img src="{{ asset('/images/upload.png') }}" alt="Plus icon" />
         {{ $slot }}</label
     >
-    <form method="POST" action="{{ route('profile.picture-destroy') }}"
-">
-    @csrf
-    @method('DELETE')
-    <button>{{__("profile.delete")}}</button>
-    </form>
-    
-    {{-- <x-table.table-button class="border-none">{{
-        __("profile.delete")
-    }}</x-table.table-button> --}}
 </div>
