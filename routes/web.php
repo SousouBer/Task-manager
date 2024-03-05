@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
 	});
 	Route::view('/profile', 'profile')->name('profile.index');
 	Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-	Route::get('/profile/{pictureType}/delete', [ProfileController::class, 'destroy'])->name('profile.picture-destroy');
+	// Route::get('/profile/{pictureType}/delete', [ProfileController::class, 'destroy'])->name('profile.picture-destroy');
 });
 
 Route::get('change/{locale}', [LanguageController::class, 'setLocale'])->name('change_language');

@@ -9,3 +9,4 @@
     {{ $attributes(['class' => $classes]) }}
     >{{ $slot }}</a
 >
+
