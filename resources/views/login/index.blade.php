@@ -35,9 +35,10 @@
                                 <x-error-message name="email" />                       
                             </div>
                             <div class="relative">
-                                <x-form.input name="password" type="password" placeholder="{{ __('auth.password') }}" />
+                                <x-form.input id="password-input" name="password" type="password" placeholder="{{ __('auth.password') }}" />
                
                                 <div
+                                    id="showOrHidePassword"
                                     class="absolute right-0 top-1/2 transform -translate-x-full -translate-y-1/2"
                                 >
                                     <img
@@ -58,3 +59,14 @@
         </div>
     </section>
 </x-main-layout>
+
+<script>
+    const btn = document.getElementById('showOrHidePassword');
+    const inputEl = document.getElementsByTagName('input')[2];
+    let showPassword = false;
+
+    btn.addEventListener('click', () => {
+        showPassword = !showPassword; 
+        inputEl.type = showPassword ? 'text' : 'password';
+    })
+</script>
