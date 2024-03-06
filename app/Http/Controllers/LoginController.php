@@ -16,7 +16,7 @@ class LoginController extends Controller
 		$user = User::where('email', $validated['email'])->first();
 
 		if (!$user || !Hash::check($validated['password'], $user->password)) {
-			return back()->withErrors(['invalidInputs' => 'Email or password is invalid. Try again.']);
+			return back()->withErrors(['invalidInputs' => __('validation.invalid_credentials')]);
 		}
 
 		auth()->login($user);
