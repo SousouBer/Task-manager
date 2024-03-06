@@ -10,7 +10,7 @@ class CreateTaskController extends Controller
 {
 	public function store(StoreTaskRequest $request): RedirectResponse
 	{
-		$attributes = $request->only('name', 'description', 'due_date');
+		$attributes = $request->only('user_id', 'name', 'description', 'due_date');
 
 		Task::create($attributes);
 

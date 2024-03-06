@@ -23,6 +23,7 @@ class UpdateTaskRequest extends FormRequest
 	{
 		$this->merge(
 			[
+				'user_id' => auth()->user()->id,
 				'name' => [
 					'en' => $this->input('name_en'),
 					'ka' => $this->input('name_ka'),
