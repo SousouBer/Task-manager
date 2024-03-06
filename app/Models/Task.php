@@ -19,4 +19,9 @@ class Task extends Model
 	{
 		return $query->where('due_date', '<', now());
 	}
+
+	public function scopeSort(Builder $query, string $column, string $direction) : Builder
+	{
+		return $query->orderBy($column, $direction);
+	}
 }
