@@ -27,8 +27,24 @@
                         <tr class="text-base py-32">
                             <x-table.thead>{{ __('tasks.task_name') }}</x-table.thead>
                             <x-table.thead>{{ __('tasks.description') }}</x-table.thead>
-                            <x-table.thead>{{ __('tasks.created_at') }}</x-table.thead>
-                            <x-table.thead>{{ __('tasks.due_date') }}</x-table.thead>
+                            <x-table.thead>
+                                <div class="flex items-center gap-4">
+                                    {{ __('tasks.created_at') }}
+                                    <div>
+                                        <x-sorting-button src="{!! asset('images/components/angle-up-solid.svg') !!}" href="{!! route('tasks.index', ['sortBy' => 'created_at', 'sortDirection' => 'asc']) !!}" />
+                                        <x-sorting-button src="{!! asset('images/components/angle-down-solid.svg') !!}" href="{!!route('tasks.index', ['sortBy' => 'created_at', 'sortDirection' => 'desc']) !!}" />
+                                    </div>   
+                                </div>
+                            </x-table.thead>
+                            <x-table.thead>
+                                <div class="flex items-center gap-4">
+                                    {{ __('tasks.due_date') }}
+                                    <div>
+                                        <x-sorting-button src="{!! asset('images/components/angle-up-solid.svg') !!}" href="{!! route('tasks.index', ['sortBy' => 'due_date', 'sortDirection' => 'asc']) !!}" />
+                                        <x-sorting-button src="{!! asset('images/components/angle-down-solid.svg') !!}" href="{!! route('tasks.index', ['sortBy' => 'due_date', 'sortDirection' => 'desc']) !!}" />
+                                    </div> 
+                                 </div>
+                            </x-table.thead>
                             <x-table.thead>{{ __('tasks.actions') }}</x-table.thead>
                             </th>
                         </tr>
