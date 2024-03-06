@@ -22,9 +22,7 @@ class TaskController extends Controller
 			$tasks->filter()->paginate(5);
 		}
 
-		if ($sortBy === 'due_date' || $sortBy === 'created_at') {
-			$tasks->orderBy($sortBy, $sortDirection);
-		}
+		$tasks->sort($sortBy, $sortDirection);
 
 		$tasks = $tasks->paginate(5)->appends(['sortBy' => $sortBy, 'sortDirection' => $sortDirection]);
 
