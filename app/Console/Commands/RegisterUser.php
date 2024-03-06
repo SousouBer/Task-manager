@@ -39,6 +39,7 @@ class RegisterUser extends Command
 		User::create([
 			'email'    => $email,
 			'password' => bcrypt($password),
+			'picture'  => 'images/avatar.png',
 		]);
 
 		$this->info('User registered successfully! You can now log in.');

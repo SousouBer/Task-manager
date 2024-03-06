@@ -3,7 +3,6 @@
         <x-heading class="mb-14 uppercase">{{
             __("profile.profile")
         }}</x-heading>
-
         <form
             method="POST"
             action="{{ route('profile.update') }}"
@@ -62,13 +61,16 @@
                 </div>
                 <div class="flex flex-col gap-10">
                     <x-profile-photo
+                        type="profile"
                         name="profile_picture"
-                        src="{{ asset('/images/avatar.png') }}"
+                        src="{{ asset('storage/'.auth()->user()->picture) }}"
                         >{{ __("profile.upload_profile") }}</x-profile-photo
                     >
+
                     <x-profile-photo
+                        type="cover"
                         name="cover_picture"
-                        src="{{ asset('/images/Intersect.png') }}"
+                        src="{{ asset('storage/'.'images/cover.png')}}"
                         >{{ __("profile.upload_profile") }}</x-profile-photo
                     >
                 </div>
