@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::redirect('/', '/tasks');
 Route::controller(LoginController::class)->group(function () {
 	Route::view('/login', 'login.index')->name('login')->middleware('guest');
 	Route::post('/login', 'login')->name('login.store')->middleware('guest');

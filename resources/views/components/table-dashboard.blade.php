@@ -1,6 +1,5 @@
           @props(['tasks'])
-
-          <div>
+            <div>
                 <div class="flex justify-between">
                     <x-heading>{{ __('tasks.your_tasks') }}</x-heading>
 
@@ -26,6 +25,7 @@
                         </a>
                     </div>
                 </div>
+                @if(!$tasks->isEmpty())
                 <table class="min-w-full">
                     <thead>
                         <tr class="text-base py-32">
@@ -56,23 +56,34 @@
                     <tbody>
                         @foreach ($tasks as $task)
                             <tr>
-                                <x-table.tdata>{{ $task->name }}</x-table.tdata>
-                                <x-table.tdata>{{ $task->description }}</x-table.tdata>
+                                <x-table.tdata class="max-w-xs">
+                                    <p class="whitespace-nowrap overflow-hidden max-w-xs">{{ $task->name }}</p>
+                                </x-table.tdata>
+                                <x-table.tdata class="max-w-lg">
+                                    <p class="whitespace-nowrap overflow-hidden max-w-xs">{{ $task->description }}</p>
+                                </x-table.tdata>
                                 <x-table.tdata>{{ $task->created_at->format('Y-m-d') }}</x-table.tdata>
                                 <x-table.tdata style="{{ $task->due_date < now() ? 'color: red;' : '' }}">{{ $task->due_date }}</x-table.tdata>
                                 <x-table.tdata>
-                                    <form method="POST" action="{{ route('tasks.destroy', ['task' => $task->id]) }}">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="mr-3 text-gray-700 border-b border-gray-600 font-normal hover:text-gray-600">Delete</button>
-                                    </form>
-                                    <x-table.table-button route="{{ route('tasks.edit', ['task' => $task->id]) }}" >{{ __('tasks.edit') }}</x-table-button>
-                                    <x-table.table-button route="{{ route('tasks.show', ['task' => $task->id]) }}">{{ __('tasks.show') }}</x-table-button>
+                                     <div class="flex items-center">                               
+                                        <form method="POST" action="{{ route('tasks.destroy', ['task' => $task->id]) }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="mr-3 text-gray-700 border-b border-gray-600 font-normal hover:text-gray-600">{{ __('tasks.delete') }}</button>
+                                        </form>
+                                        <x-table.table-button route="{{ route('tasks.edit', ['task' => $task->id]) }}" >{{ __('tasks.edit') }}</x-table-button>
+                                        <x-table.table-button route="{{ route('tasks.show', ['task' => $task->id]) }}">{{ __('tasks.show') }}</x-table-button>
+                                    </div>
                                 </x-table.tdata>                           
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
+                @else
+                    <div class="w-full flex justify-center">
+                        <p class="text-xl font-bold py-20">You don't have any tasks yet. Add one!</p>
+                    </div>
+                @endif
                 <div>
                     {{ $tasks->links() }}
                 </div>                
