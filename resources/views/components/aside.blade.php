@@ -1,4 +1,4 @@
-<aside class="h-full py-8 px-8 flex flex-col bg-gray-100 rounded-xl flex-shrink-0">
+<aside class="h-full py-8 px-8 flex flex-col bg-gray-100 rounded-xl flex-shrink-0 fixed">
             <div>
                 <div class="flex items-center justify-center mb-20">
                     <div class="w-16 overflow-hidden rounded-full">
@@ -35,7 +35,7 @@
                     </ul>
                 </div>
             </div>             
-            <form method="POST" action="{{ route('logout') }}" class="mt-auto">
+            <form method="POST" action="{{ route('logout') }}" class="mt-auto mb-10">
             @csrf  
             <div class="flex items-center gap-2 ">
                 <img src="{{ asset('/images/logout.png')}}" alt="Logout icon" />

@@ -1,6 +1,6 @@
 <x-layout>
     <div class="flex items-center flex-col justify-center">
-        <x-back-button link="#" />
+        <x-back-button link="{{ route('tasks.index') }}" />
 
         <x-heading class="mb-14 uppercase">{{
             __("tasks.create_task")

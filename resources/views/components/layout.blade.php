@@ -2,7 +2,7 @@
     <section class="p-8 flex flex-row h-screen">
         <x-aside />
 
-        <div class="flex-grow flex flex-col p-20 pt-32">
+        <div class="flex-grow flex flex-col p-20 pt-32 ml-72">
 
             {{ $slot }}
 
