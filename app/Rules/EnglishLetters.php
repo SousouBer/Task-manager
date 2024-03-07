@@ -13,6 +13,6 @@ class EnglishLetters implements Rule
 
 	public function message(): string
 	{
-		return 'The :attribute must contain only English letters.';
+		return __('validation.english_letters');
 	}
 }

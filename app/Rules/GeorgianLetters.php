@@ -13,6 +13,6 @@ class GeorgianLetters implements Rule
 
 	public function message(): string
 	{
-		return 'The :attribute must contain only Georgian letters.';
+		return __('validation.georgian_letters');
 	}
 }
