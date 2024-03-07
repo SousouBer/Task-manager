@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\Auth;
 use Spatie\Translatable\HasTranslations;
 
 class Task extends Model
@@ -15,13 +17,23 @@ class Task extends Model
 
 	protected $guarded = ['id'];
 
-	public function scopeFilter(Builder $query) : Builder
+	public function user(): BelongsTo
+	{
+		return $this->belongsTo(User::class);
+	}
+
+	public function scopeFilter(Builder $query): Builder
 	{
 		return $query->where('due_date', '<', now());
 	}
 
-	public function scopeSort(Builder $query, string $column, string $direction) : Builder
+	public function scopeSort(Builder $query, string $column, string $direction): Builder
 	{
 		return $query->orderBy($column, $direction);
+	}
+
+	public function scopeOldTasks(Builder $query): Builder
+	{
+		return $query->where('user_id', Auth::id())->where('due_date', '<', now());
 	}
 }

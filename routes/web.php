@@ -28,6 +28,7 @@ Route::controller(LoginController::class)->group(function () {
 Route::middleware('auth')->group(function () {
 	Route::prefix('tasks')->group(function () {
 		Route::get('/', [TaskController::class, 'index'])->name('tasks.index');
+		Route::delete('/', [TaskController::class, 'destroyOldTasks'])->name('tasks.destoryOld');
 		Route::view('/create', 'create')->name('tasks.create');
 		Route::post('/', [CreateTaskController::class, 'store'])->name('tasks.store');
 		Route::get('/{task}/edit', [EditTaskController::class, 'edit'])->name('tasks.edit');

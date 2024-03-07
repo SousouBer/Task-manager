@@ -11,12 +11,11 @@ class TaskController extends Controller
 {
 	public function index(QueryParameterRequest $request): View
 	{
-		$dueTasks = $request->input('dueTasks');
+		$tasks = auth()->user()->tasks();
 
+		$dueTasks = $request->input('dueTasks');
 		$sortBy = $request->input('sortBy', 'created_at');
 		$sortDirection = $request->input('sortDirection', 'desc');
-
-		$tasks = Task::query();
 
 		if ($dueTasks) {
 			$tasks->filter()->paginate(5);
@@ -43,5 +42,12 @@ class TaskController extends Controller
 		$task->delete();
 
 		return redirect()->route('tasks.index');
+	}
+
+	public function destroyOldTasks(): RedirectResponse
+	{
+		Task::OldTasks()->delete();
+
+		return redirect()->back();
 	}
 }
