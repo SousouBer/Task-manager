@@ -1,66 +1,154 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<div>
+	<div align="center">
+	<img width="300" src="https://3040593345-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FwJ6ZQDeSoLTHwTIMhyeb%2Fuploads%2FbgOiWcCNyQMZfd120C68%2Fdepositphotos_406412896-stock-illustration-vector-check-list-stopwatch-efficiency.jpg?alt=media&token=18c3ff8a-5da3-4796-bbf3-6d1b9e8383ca">
+	</div>
+	<h1>Task Management Application</h1>
+</div>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Task management application is the platform which allows people to manage their tasks. In the application. a registered user can add, edit, or delete a task, view the detailed information, see the exact date when it was created, and the date when the task should be completed. Moreover, the application provides an opportunity to update the user's profile, add or change profile pictures.
 
-## About Laravel
+#
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Table of Contents
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   [Prerequisites](#prerequisites)
+-   [Tech Stack](#tech-stack)
+-   [Getting Started](#getting-started)
+-   [Migrations](#migration)
+-   [Development](#development)
+-   [Project Structure](#project-structure)
+-   [Resources](#resources)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#
 
-## Learning Laravel
+### Prerequisites
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+-   *PHP@8.3 and up*
+-   _Laravel@10_
+-   _MYSQL@8 and up_
+-   _npm@10 and up_
+-   _composer@2 and up_
+-   _NodeJS@18 and up_
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+#
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Tech Stack
 
-## Laravel Sponsors
+-   [Laravel@10.x](https://laravel.com/docs/10.x) - Back-end framework
+-   [Spatie Translatable](https://github.com/spatie/laravel-translatable) - package for translation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+#
 
-### Premium Partners
+### Getting Started
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+1\. Firstly, you need to clone Task Management Application repository from github:
 
-## Contributing
+```sh
+git clone https://github.com/RedberryInternship/task-manager-soso-beriashvili.git
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2\. Next step requires you to run _composer install_ in order to install all the dependencies:
 
-## Code of Conduct
+```sh
+composer install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3\. After installing all the PHP dependencies, now install all the Javascript dependencies:
 
-## Security Vulnerabilities
+```sh
+npm install
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+and then:
 
-## License
+```sh
+npm run dev
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+in order to build your JS/SaaS resources.
+
+4\. Now you need to set your env file. Go to the root of your project and execute the following command.
+
+```sh
+cp .env.example .env
+```
+
+And now you should provide **.env** file all the necessary Database variables:
+
+#
+
+**MYSQL:**
+
+> DB_CONNECTION=mysql
+
+> DB_HOST=127.0.0.1
+
+> DB_PORT=3306
+
+> DB_DATABASE=**\***
+
+> DB_USERNAME=**\***
+
+> DB_PASSWORD=**\***
+
+After setting up **.env** file, execute this command in order to cache environment variables:
+
+```sh
+php artisan config:cache
+```
+
+4\. Now execute in the root of you project following:
+
+```sh
+  php artisan key:generate
+```
+
+Which generates auth key.
+
+#
+
+### Migration
+
+Having completed getting started section, migrating database is quite simple, just execute:
+
+```sh
+php artisan migrate
+```
+
+#
+
+### Development
+
+You can run Laravel's built-in development server by executing:
+
+```sh
+  php artisan serve
+```
+
+And you need to run the following command at well:
+
+```sh
+  npm run dev
+```
+
+it builds your Javascript files into executable scripts.
+
+#### All the basic installation is now done.
+
+In order to register, you need to use the following Artisan command:
+
+```sh
+  npm artisan register:user
+```
+
+After you run this command, you will be asked to enter an email and then a password. Email needs to be unique upon registration.
+
+#### And that is all! If the registration was success, you can now login and use the application!
+
+#
+
+### Resources
+
+-   [Detailed description about the project](https://redberry.gitbook.io/assignment-i-task-manager/)
+-   [Figma design of the project](https://www.figma.com/file/HkL8NHL7914PBgdYb6D3zN/Laravel-Dev?type=design&node-id=1-2&mode=design&t=S2CaGfNZN4CCA4Yt-0)
+-   [DrawSQL - Schema of the excisting tables ](https://drawsql.app/teams/team-soso/diagrams/task-management)
