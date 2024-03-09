@@ -3,8 +3,6 @@
                 <div class="flex items-center justify-center mb-20">
                     <div class="w-16 overflow-hidden rounded-full">
                         <img class="w-full" src="{{ Storage::disk('public')->exists(auth()->user()->picture) ? asset('storage/'.auth()->user()->picture) : asset('images/avatar.png') }}" alt="Avatar png" />
-
-                        {{-- <img class="w-full" src="{{ asset('storage/'.auth()->user()->picture) }}" alt="Avatar png" /> --}}
                     </div>
                 </div>
                 <div>
