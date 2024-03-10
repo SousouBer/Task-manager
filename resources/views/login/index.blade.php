@@ -4,7 +4,7 @@
             <div class="flex-1 flex justify-end">
                 <img
                     class="self-end"
-                    src="{{ asset('storage/'.'images/cover.png')}}"
+                    src="{{ Storage::disk('public')->exists('images/cover.png') ? asset('storage/images/cover.png') : asset('images/cover.png') }}"
                     alt="Login cover"
                 />
             </div>

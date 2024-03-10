@@ -63,14 +63,14 @@
                     <x-profile-photo
                         type="profile"
                         name="profile_picture"
-                        src="{{ asset('storage/'.auth()->user()->picture) }}"
+                        src="{{ Storage::disk('public')->exists(auth()->user()->picture) ? asset('storage/'.auth()->user()->picture) : asset('images/avatar.png') }}"
                         >{{ __("profile.upload_profile") }}</x-profile-photo
                     >
 
                     <x-profile-photo
                         type="cover"
                         name="cover_picture"
-                        src="{{ asset('storage/'.'images/cover.png')}}"
+                        src="{{ Storage::disk('public')->exists('images/cover.png') ? asset('storage/images/cover.png') : asset('images/cover.png') }}"
                         >{{ __("profile.upload_profile") }}</x-profile-photo
                     >
                 </div>
