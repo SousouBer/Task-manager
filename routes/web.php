@@ -4,7 +4,7 @@ use App\Http\Controllers\CreateTaskController;
 use App\Http\Controllers\EditTaskController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
 		Route::get('/{task}', [TaskController::class, 'show'])->name('tasks.show');
 	});
 	Route::view('/profile', 'profile')->name('profile.index');
-	Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+	Route::patch('/profile', [UserController::class, 'update'])->name('profile.update');
 });
 
 Route::get('change/{locale}', [LanguageController::class, 'setLocale'])->name('change_language');
