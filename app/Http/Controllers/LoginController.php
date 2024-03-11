@@ -11,17 +11,18 @@ class LoginController extends Controller
 {
 	public function login(LoginRequest $request): RedirectResponse
 	{
-		$validated = $request->validated();
+		$email = $request->email;
+		$password = $request->password;
 
-		$user = User::where('email', $validated['email'])->first();
+		$user = User::where('email', $email)->first();
 
-		if (!$user || !Hash::check($validated['password'], $user->password)) {
-			return back()->withErrors(['invalidInputs' => __('validation.invalid_credentials')]);
+		if ($user && Hash::check($password, $user->password)) {
+			auth()->login($user);
+
+			return redirect()->route('tasks.index');
 		}
 
-		auth()->login($user);
-
-		return redirect()->route('tasks.index');
+		return back()->withErrors(['invalidInputs' => __('validation.invalid_credentials')]);
 	}
 
 	public function logout(): RedirectResponse
