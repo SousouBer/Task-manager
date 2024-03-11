@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\QueryParameterRequest;
+use App\Http\Requests\StoreTaskRequest;
 use App\Models\Task;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -35,6 +36,15 @@ class TaskController extends Controller
 		return view('admin.task-details', [
 			'task' => $task,
 		]);
+	}
+
+	public function store(StoreTaskRequest $request): RedirectResponse
+	{
+		$attributes = $request->only('user_id', 'name', 'description', 'due_date');
+
+		Task::create($attributes);
+
+		return redirect()->route('tasks.index');
 	}
 
 	public function destroy(Task $task): RedirectResponse
