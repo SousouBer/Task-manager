@@ -71,6 +71,9 @@ return [
 
 	'timezone' => 'UTC',
 
+	// All available languages.
+	'available_languages' => ['en', 'ka'],
+
 	/*
 	|--------------------------------------------------------------------------
 	| Application Locale Configuration
