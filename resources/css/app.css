@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input:focus + label,
+input:not(:placeholder-shown) + label,
+textarea:focus + label,
+textarea:not(:placeholder-shown) + label {
+    top: 20px;
+    left: 16px;
+    font-size: 12px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: transparent !important;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+    color: #959da5 !important;
+}

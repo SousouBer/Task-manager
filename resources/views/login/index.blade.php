@@ -28,15 +28,14 @@
                     <form method="POST" action="{{ route('login.store') }}">
                         @csrf
 
-                        <x-error-message name="invalidInputs" />
-                        <div class="flex gap-4 flex-col py-4">
+                        <div class="flex gap-4 flex-col py-4 justify-between">
                             <div>
-                                <x-form.input name="email" type="email" placeholder="{{ __('auth.email') }}" />      
+                                <x-form.input name="email" type="email" labelName="{{__('auth.email')}}" placeholder="{{ __('auth.email_placeholder') }}" />      
                                 <x-error-message name="email" />                       
                             </div>
                             <div class="relative">
-                                <x-form.input id="password-input" name="password" type="password" placeholder="{{ __('auth.password') }}" />
-               
+                                <x-form.input id="password-input" name="password" type="password" labelName="{{__('auth.password')}}" placeholder="{{ __('auth.password_placeholder') }}" />
+                                 <x-error-message name="password" />
                                 <div
                                     id="showOrHidePassword"
                                     class="absolute right-0 top-1/2 transform -translate-x-full -translate-y-1/2"
@@ -48,13 +47,12 @@
                                     />
                                 </div>
                             </div>
-                            <x-error-message name="password" />                                                       
                         </div>
+                            <x-error-message name="invalidInputs" />                                            
                         <x-form.button>{{ __('auth.log_in') }}</x-form.button>
                     </form>
                 </div>
-
-                <x-languages />
+            <x-languages />
             </div>
         </div>
     </section>
