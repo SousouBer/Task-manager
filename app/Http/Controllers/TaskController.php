@@ -48,18 +48,14 @@ class TaskController extends Controller
 
 	public function store(StoreTaskRequest $request): RedirectResponse
 	{
-		$attributes = $request->only('user_id', 'name', 'description', 'due_date');
-
-		Task::create($attributes);
+		Task::create($request->validated());
 
 		return redirect()->route('tasks.index');
 	}
 
 	public function update(UpdateTaskRequest $request, Task $task): RedirectResponse
 	{
-		$attributes = $request->only('user_id', 'name', 'description', 'due_date');
-
-		$task->update($attributes);
+		$task->update($request->validated());
 
 		return redirect()->route('tasks.index');
 	}

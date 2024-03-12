@@ -12,33 +12,33 @@
             <div class="flex flex-col gap-4 mb-5">
                 <div>
                     <x-form.input
-                        name="name_en"
+                        name="name[en]"
                         type="text"
                         placeholder="{{ __('tasks.task_name_englisch') }}"
                     />
-                    <x-error-message name="name_en" />
+                    <x-error-message name="name.en" />
                 </div>
                 <div>
                     <x-form.input
-                        name="name_ka"
+                        name="name[ka]"
                         type="text"
                         placeholder="{{ __('tasks.task_name_georgian') }}"
                     />
-                    <x-error-message name="name_ka" />
+                    <x-error-message name="name.ka" />
                 </div>
                 <div>
                     <x-form.textarea
-                        name="description_en"
+                        name="description[en]"
                         placeholder="{{ __('tasks.description_english') }}"
                     />
-                    <x-error-message name="description_en" />
+                    <x-error-message name="description.en" />
                 </div>
                 <div>
                     <x-form.textarea
-                        name="description_ka"
+                        name="description[ka]"
                         placeholder="{{ __('tasks.description_georgian') }}"
                     />
-                    <x-error-message name="description_ka" />
+                    <x-error-message name="description.ka" />
                 </div>
                 <div>
                     <x-form.input
