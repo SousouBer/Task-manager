@@ -34,6 +34,6 @@ class Task extends Model
 
 	public function scopeOldTasks(Builder $query): Builder
 	{
-		return $query->where('user_id', Auth::id())->where('due_date', '<', now());
+		return $query->user()->where('due_date', '<', now());
 	}
 }

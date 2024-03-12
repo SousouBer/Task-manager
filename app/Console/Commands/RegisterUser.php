@@ -12,7 +12,7 @@ class RegisterUser extends Command
 
 	protected $description = 'Register a user in the database';
 
-	public function handle()
+	public function handle(): int
 	{
 		$this->info('To register, type the email and password.');
 
@@ -43,5 +43,7 @@ class RegisterUser extends Command
 		]);
 
 		$this->info('User registered successfully! You can now log in.');
+
+		return 0;
 	}
 }

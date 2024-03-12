@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\QueryParameterRequest;
+use App\Http\Requests\StoreTaskRequest;
+use App\Http\Requests\UpdateTaskRequest;
 use App\Models\Task;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -35,6 +37,27 @@ class TaskController extends Controller
 		return view('admin.task-details', [
 			'task' => $task,
 		]);
+	}
+
+	public function edit(Task $task): View
+	{
+		return view('edit-task', [
+			'task' => $task,
+		]);
+	}
+
+	public function store(StoreTaskRequest $request): RedirectResponse
+	{
+		Task::create($request->validated());
+
+		return redirect()->route('tasks.index');
+	}
+
+	public function update(UpdateTaskRequest $request, Task $task): RedirectResponse
+	{
+		$task->update($request->validated());
+
+		return redirect()->route('tasks.index');
 	}
 
 	public function destroy(Task $task): RedirectResponse

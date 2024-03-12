@@ -7,7 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-class ProfileController extends Controller
+class UserController extends Controller
 {
 	public function update(UpdateProfileRequest $request): RedirectResponse
 	{
