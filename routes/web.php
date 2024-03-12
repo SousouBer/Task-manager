@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\CreateTaskController;
-use App\Http\Controllers\EditTaskController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
@@ -24,20 +22,17 @@ Route::controller(LoginController::class)->group(function () {
 	Route::post('/login', 'login')->name('login.store')->middleware('guest');
 	Route::post('/logout', 'logout')->name('logout');
 });
-
-Route::middleware('auth')->group(function () {
-	Route::prefix('tasks')->group(function () {
-		Route::get('/', [TaskController::class, 'index'])->name('tasks.index');
-		Route::delete('/', [TaskController::class, 'destroyOldTasks'])->name('tasks.destoryOld');
-		Route::view('/create', 'create')->name('tasks.create');
-		Route::post('/', [TaskController::class, 'store'])->name('tasks.store');
-		Route::get('/{task}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
-		Route::patch('/{task}', [TaskController::class, 'update'])->name('tasks.update');
-		Route::delete('/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
-		Route::get('/{task}', [TaskController::class, 'show'])->name('tasks.show');
-	});
-	Route::view('/profile', 'profile')->name('profile.index');
-	Route::patch('/profile', [UserController::class, 'update'])->name('profile.update');
+Route::prefix('tasks')->controller(TaskController::class)->middleware('auth')->group(function () {
+	Route::get('/', 'index')->name('tasks.index');
+	Route::delete('/', 'destroyOldTasks')->name('tasks.destoryOld');
+	Route::view('/create', 'create')->name('tasks.create');
+	Route::post('/', 'store')->name('tasks.store');
+	Route::get('/{task}/edit', 'edit')->name('tasks.edit');
+	Route::patch('/{task}', 'update')->name('tasks.update');
+	Route::delete('/{task}', 'destroy')->name('tasks.destroy');
+	Route::get('/{task}', 'show')->name('tasks.show');
 });
+Route::view('/profile', 'profile')->name('profile.index')->middleware('auth');
+Route::patch('/profile', [UserController::class, 'update'])->name('profile.update')->middleware('auth');
 
 Route::get('change/{locale}', [LanguageController::class, 'setLocale'])->name('change_language');
