@@ -29,9 +29,9 @@
                 <table class="min-w-full">
                     <thead>
                         <tr class="text-base py-32">
-                            <x-table.thead>{{ __('tasks.task_name') }}</x-table.thead>
-                            <x-table.thead>{{ __('tasks.description') }}</x-table.thead>
-                            <x-table.thead>
+                            <x-table.thead style="width: 25%;">{{ __('tasks.task_name') }}</x-table.thead>
+                            <x-table.thead style="width: 35%;">{{ __('tasks.description') }}</x-table.thead>
+                            <x-table.thead style="width: 10%;">
                                 <div class="flex items-center gap-4">
                                     {{ __('tasks.created_at') }}
                                     <div>
@@ -40,7 +40,7 @@
                                     </div>   
                                 </div>
                             </x-table.thead>
-                            <x-table.thead>
+                            <x-table.thead style="width: 10%;">
                                 <div class="flex items-center gap-4">
                                     {{ __('tasks.due_date') }}
                                     <div>
@@ -49,7 +49,7 @@
                                     </div> 
                                  </div>
                             </x-table.thead>
-                            <x-table.thead>{{ __('tasks.actions') }}</x-table.thead>
+                            <x-table.thead style="width: 20%;">{{ __('tasks.actions') }}</x-table.thead>
                             </th>
                         </tr>
                     </thead>

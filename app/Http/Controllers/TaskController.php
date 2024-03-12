@@ -20,10 +20,10 @@ class TaskController extends Controller
 		$sortDirection = $request->input('sortDirection', 'desc');
 
 		if ($dueTasks) {
-			$tasks->filter()->paginate(5);
+			$tasks = $tasks->filter()->paginate(5);
 		}
 
-		$tasks->sort($sortBy, $sortDirection);
+		$tasks = $tasks->sort($sortBy, $sortDirection);
 
 		$tasks = $tasks->paginate(5)->appends(['sortBy' => $sortBy, 'sortDirection' => $sortDirection]);
 

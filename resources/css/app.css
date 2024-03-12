@@ -9,7 +9,7 @@ textarea:not(:placeholder-shown) + label {
     top: 20px;
     left: 16px;
     font-size: 12px;
-    color: #959DA5;
+    color: #959da5;
 }
 
 input::placeholder,
@@ -23,10 +23,10 @@ textarea:focus::placeholder {
 }
 
 .profile-user-label {
-    color: #499AF9 !important;
+    color: #499af9 !important;
     font-size: 16px !important;
 }
 
 .active-locale {
-    background-color: #F6F8FA;
+    background-color: #f6f8fa;
 }
