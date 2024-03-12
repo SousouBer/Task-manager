@@ -2,17 +2,15 @@
 
 namespace App\Rules;
 
-use Illuminate\Contracts\Validation\Rule;
+use Closure;
+use Illuminate\Contracts\Validation\ValidationRule;
 
-class GeorgianLetters implements Rule
+class GeorgianLetters implements ValidationRule
 {
-	public function passes($attribute, $value): bool
+	public function validate(string $attribute, mixed $value, Closure $fail): void
 	{
-		return preg_match('/^[\p{Georgian} ]+$/u', $value);
-	}
-
-	public function message(): string
-	{
-		return __('validation.georgian_letters');
+		if (!preg_match('/^[\p{Georgian} ]+$/u', $value)) {
+			$fail(__('validation.georgian_letters'));
+		}
 	}
 }

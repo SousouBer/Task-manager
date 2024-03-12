@@ -2,17 +2,15 @@
 
 namespace App\Rules;
 
-use Illuminate\Contracts\Validation\Rule;
+use Closure;
+use Illuminate\Contracts\Validation\ValidationRule;
 
-class EnglishLetters implements Rule
+class EnglishLetters implements ValidationRule
 {
-	public function passes($attribute, $value): bool
+	public function validate(string $attribute, mixed $value, Closure $fail): void
 	{
-		return preg_match('/^[a-zA-Z\s]+$/', $value);
-	}
-
-	public function message(): string
-	{
-		return __('validation.english_letters');
+		if (!preg_match('/^[a-zA-Z\s]+$/', $value)) {
+			$fail(__('validation.english_letters'));
+		}
 	}
 }
