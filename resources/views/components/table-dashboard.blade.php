@@ -8,14 +8,14 @@
                         @csrf
                         @method('DELETE')
                         <button
-                        class="cursor-pointer border border-blue-400 rounded-lg py-3 px-6 font-bold text-blue-400 hover:bg-blue-300 hover:text-white hover:border-white transition-all duration-300"
+                        class="uppercase cursor-pointer border border-blue-400 rounded-lg py-3 px-6 font-bold text-blue-400 hover:bg-blue-300 hover:text-white hover:border-white transition-all duration-300"
                         >
                         {{ __('tasks.delete_old_tasks') }}
                         </button>
                         </form> 
                         <a
                             href="{{ route('tasks.create') }}"
-                            class="whitespace-nowrap items-center cursor-pointer flex gap-4 rounded-lg py-3 px-6 font-bold bg-blue-400 text-white hover:bg-blue-300 transition-all duration-300"
+                            class="uppercase whitespace-nowrap items-center cursor-pointer flex gap-4 rounded-lg py-3 px-6 font-bold bg-blue-400 text-white hover:bg-blue-300 transition-all duration-300"
                         >
                             <img
                                 src="{{asset('/images/plus-circle.png')}}"
