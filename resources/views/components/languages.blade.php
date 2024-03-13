@@ -1,4 +1,4 @@
-<div class="mt-auto flex gap-12 self-end py-8">
-    <a href="{{ route('change_language', ['locale' => 'en']) }}">English</a>
-    <a href="{{ route('change_language', ['locale' => 'ka']) }}">ქართული</a>
+<div class="mt-auto flex self-end py-8">
+    <a class="{{ app()->getLocale() === 'en' ? 'active-locale' : '' }} py-4 px-6 rounded-xl" href="{{ route('change_language', ['locale' => 'en']) }}">English</a>
+    <a class="{{ app()->getLocale() === 'ka' ? 'active-locale' : '' }} py-4 px-6 rounded-xl" href="{{ route('change_language', ['locale' => 'ka']) }}">ქართული</a>
 </div>

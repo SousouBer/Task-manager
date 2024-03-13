@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Facades\Auth;
 use Spatie\Translatable\HasTranslations;
 
 class Task extends Model
@@ -34,6 +33,6 @@ class Task extends Model
 
 	public function scopeOldTasks(Builder $query): Builder
 	{
-		return $query->user()->where('due_date', '<', now());
+		return $query->whereHas('user', fn ($query) => $query->where('due_date', '<', now()));
 	}
 }

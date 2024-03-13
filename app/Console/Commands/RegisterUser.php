@@ -17,7 +17,7 @@ class RegisterUser extends Command
 		$this->info('To register, type the email and password.');
 
 		$email = $this->ask('Type the email');
-		$password = $this->ask('Type the password');
+		$password = $this->secret('Type the password');
 
 		$validator = Validator::make([
 			'email'    => $email,

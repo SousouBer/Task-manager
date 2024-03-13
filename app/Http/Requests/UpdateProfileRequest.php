@@ -10,7 +10,7 @@ class UpdateProfileRequest extends FormRequest
 	{
 		return [
 			'current_password'      => 'nullable|required_with:password',
-			'password'              => 'nullable|required_with:current_password|confirmed',
+			'password'              => 'nullable|confirmed',
 			'profile_picture'       => 'nullable|image',
 			'cover_picture'         => 'nullable|image',
 		];
