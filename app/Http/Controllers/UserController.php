@@ -14,7 +14,7 @@ class UserController extends Controller
 		$auth = Auth::user();
 
 		if ($request->filled('current_password') && !Hash::check($request->current_password, $auth->password)) {
-			return redirect()->back()->withErrors(['current_password' => 'The current password is incorrect.']);
+			return redirect()->back()->withErrors(['current_password' => __('validation.current_password')]);
 		}
 
 		if ($request->filled('password')) {

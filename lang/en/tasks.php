@@ -1,8 +1,9 @@
 <?php
 
 return [
+	'back'                  => 'Back',
 	'your_tasks'            => 'Your tasks',
-	'delete_old_tasks'      => 'Delete all tasks',
+	'delete_old_tasks'      => 'Delete old tasks',
 	'add_task'              => 'Add task',
 	'task_name'             => 'Task name',
 	'description'           => 'Description',
@@ -20,4 +21,5 @@ return [
 	'description_georgian'  => 'Description in Georgian',
 	'edit_changes'          => 'Edit changes',
 	'create_task'           => 'Create task',
+	'no_tasks_yet'          => 'You do not have any tasks in this field.',
 ];

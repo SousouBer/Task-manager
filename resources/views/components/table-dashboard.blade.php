@@ -81,7 +81,7 @@
                 </table>
                 @else
                     <div class="w-full flex justify-center">
-                        <p class="text-xl font-bold py-20">You don't have any tasks yet. Add one!</p>
+                        <p class="text-xl font-bold py-20">{{ __('tasks.no_tasks_yet') }}</p>
                     </div>
                 @endif
                 <div>
