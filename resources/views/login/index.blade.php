@@ -47,8 +47,8 @@
                                     />
                                 </div>
                             </div>
-                        </div>
                             <x-error-message name="invalidInputs" />                                            
+                        </div>
                         <x-form.button>{{ __('auth.log_in') }}</x-form.button>
                     </form>
                 </div>
