@@ -30,3 +30,19 @@ textarea:focus::placeholder {
 .active-locale {
     background-color: #f6f8fa;
 }
+
+.table.title {
+    width: 25%;
+}
+
+.table.desceiption {
+    width: 35%;
+}
+
+table.dates {
+    width: 10%;
+}
+
+table.btns {
+    width: 20%;
+}
