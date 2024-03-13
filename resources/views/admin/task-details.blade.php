@@ -22,11 +22,11 @@
         <div class="flex gap-16">
             <div class="flex flex-col justify-center gap-2">
                 <span>{{__('tasks.created_at') }}</span>
-                <span class="text-lg">{{ $task->created_at->format('Y-m-d') }}</span>
+                <span class="text-lg">{{ $task->created_at->format('Y/m/d') }}</span>
             </div>
             <div class="flex flex-col justify-center gap-2">
                 <span>{{__('tasks.due_date') }}</span>
-                <span class="text-lg">{{ $task->due_date }}</span>
+                <span class="text-lg">{{ date('Y/m/d', strtotime($task->due_date)) }}</span>
             </div>
         </div>
     </div>

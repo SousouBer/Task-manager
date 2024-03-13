@@ -31,18 +31,18 @@ textarea:focus::placeholder {
     background-color: #f6f8fa;
 }
 
-.table.title {
+.table-title {
     width: 25%;
 }
 
-.table.desceiption {
+.table-desceiption {
     width: 35%;
 }
 
-table.dates {
+.table-dates {
     width: 10%;
 }
 
-table.btns {
+.table-btns {
     width: 20%;
 }
