@@ -27,15 +27,14 @@
                     </div>
                     <form method="POST" action="{{ route('login.store') }}">
                         @csrf
-
-                        <div class="flex gap-4 flex-col py-4 justify-between">
-                            <div>
+                        
+                        <div class="py-4">
+                            <div class="mb-6">
                                 <x-form.input name="email" type="email" labelName="{{__('auth.email')}}" placeholder="{{ __('auth.email_placeholder') }}" />      
                                 <x-error-message name="email" />                       
                             </div>
                             <div class="relative">
                                 <x-form.input id="password-input" name="password" type="password" labelName="{{__('auth.password')}}" placeholder="{{ __('auth.password_placeholder') }}" />
-                                 <x-error-message name="password" />
                                 <div
                                     id="showOrHidePassword"
                                     class="absolute right-0 top-1/2 transform -translate-x-full -translate-y-1/2"
@@ -47,6 +46,7 @@
                                     />
                                 </div>
                             </div>
+                            <x-error-message name="password" />
                             <x-error-message name="invalidInputs" />                                            
                         </div>
                         <x-form.button>{{ __('auth.log_in') }}</x-form.button>
