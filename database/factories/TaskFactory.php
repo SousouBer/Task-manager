@@ -19,11 +19,11 @@ class TaskFactory extends Factory
         return [
             'name' => [
                 'en' => $this->faker->sentence,
-                'ka' => 'Georgian Name',
+                'ka' => 'დავალების ქართული სახელწოდება',
             ],
             'description' => [
                 'en' => $this->faker->paragraph,
-                'ka' => 'Georgian Description',
+                'ka' => 'დავალების ქართული აღწერა',
             ],
             'due_date' => $this->faker->date,
         ];
