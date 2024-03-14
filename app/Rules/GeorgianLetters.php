@@ -9,7 +9,7 @@ class GeorgianLetters implements ValidationRule
 {
 	public function validate(string $attribute, mixed $value, Closure $fail): void
 	{
-		if (!preg_match('/^[\p{Georgian} ]+$/u', $value)) {
+		if (!preg_match('/^[\p{Georgian} ?\/.,!@]+$/u', $value)) {
 			$fail(__('validation.georgian_letters'));
 		}
 	}
