@@ -44,7 +44,7 @@
                     <x-form.input
                         name="due_date"
                         type="date"
-                        placeholder="Due date"
+                        placeholder="{{ __('tasks.due_date') }}"
                     />
                     <x-error-message name="due_date" />
                 </div>

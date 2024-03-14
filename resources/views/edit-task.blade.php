@@ -49,7 +49,7 @@
                         name="due_date"
                         type="date"
                         value="{{ $task->due_date }}"
-                        placeholder="Due date"
+                        placeholder="{{ __('tasks.due_date') }}"
                     />
                     <x-error-message name="due_date" />
                 </div>
