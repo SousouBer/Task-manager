@@ -20,6 +20,17 @@ class StoreTaskRequest extends FormRequest
 		];
 	}
 
+	public function attributes(): array
+	{
+		return [
+			'name.en'           => __('tasks.task_name_englisch'),
+			'name.ka'           => __('tasks.task_name_georgian'),
+			'description.en'    => __('tasks.description_english'),
+			'description.ka'    => __('tasks.description_georgian'),
+			'due_date'          => __('tasks.due_date'),
+		];
+	}
+
 	protected function prepareForValidation(): void
 	{
 		$this->merge(

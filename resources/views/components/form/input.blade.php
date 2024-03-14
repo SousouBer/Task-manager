@@ -1,4 +1,4 @@
-@props(['name', 'type', 'placeholder', 'value' => '', 'labelName' => null, 'disabled' => false])
+@props(['name', 'type', 'placeholder', 'value' => '', 'labelName' => null, 'disabled' => false, 'required' => false])
 
 @php
     $errorInputName = str_replace(['[', ']'], ['.', ''], $name);
@@ -11,6 +11,7 @@
         $type
     }}" name="{{ $name }}" value="{{ $value }}"
     {{ $disabled ? "disabled" : "" }}
-    placeholder="{{ $placeholder }}" id="{{ $name }}" />
+    {{ $required ? 'required' : "" }}
+    placeholder="{{ $placeholder }}" id="{{ $name }}"/>
    <x-form.label class="top-1/2 " name="{{ $name }}" placeholder="{{ $labelName ?? $placeholder }}" />
 </div>

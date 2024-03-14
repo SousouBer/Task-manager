@@ -30,11 +30,11 @@
                         
                         <div class="py-4">
                             <div class="mb-6">
-                                <x-form.input name="email" type="email" labelName="{{__('auth.email')}}" placeholder="{{ __('auth.email_placeholder') }}" />      
+                                <x-form.input required name="email" type="email" labelName="{{__('auth.email')}}" placeholder="{{ __('auth.email_placeholder') }}" />      
                                 <x-error-message name="email" />                       
                             </div>
                             <div class="relative">
-                                <x-form.input id="password-input" name="password" type="password" labelName="{{__('auth.password')}}" placeholder="{{ __('auth.password_placeholder') }}" />
+                                <x-form.input required id="password-input" name="password" type="password" labelName="{{__('auth.password')}}" placeholder="{{ __('auth.password_placeholder') }}" />
                                 <div
                                     id="showOrHidePassword"
                                     class="absolute right-0 top-1/2 transform -translate-x-full -translate-y-1/2"
