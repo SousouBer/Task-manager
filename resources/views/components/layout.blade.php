@@ -1,6 +1,8 @@
 <x-main-layout>
     <section class="p-8 flex flex-row h-screen">
-        <x-aside />
+    <div>
+        <x-aside />    
+    </div>
 
         <div class="flex-grow flex flex-col p-20 pt-32 {{ app()->getLocale() === 'ka' ? 'ml-80' : 'ml-44' }}">
 

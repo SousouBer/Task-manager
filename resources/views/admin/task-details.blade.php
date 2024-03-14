@@ -14,7 +14,7 @@
         </div>
         <div class="flex flex-col justify-center my-12">
             <span>{{__('tasks.description') }}</span>
-            <div style="max-width: 57%;">
+            <div>
                 <p class="my-3 text-lg leading-8 w-10/12">
                 {{ $task->description }}
             </p>
