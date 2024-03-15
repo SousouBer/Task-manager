@@ -20,12 +20,12 @@ class TaskController extends Controller
 		$sortDirection = $request->input('sortDirection', 'desc');
 
 		if ($dueTasks) {
-			$tasks->filter()->paginate(5);
+			$tasks->filter()->paginate(8);
 		}
 
 		$tasks->sort($sortBy, $sortDirection);
 
-		$tasks = $tasks->paginate(5)->appends(['sortBy' => $sortBy, 'sortDirection' => $sortDirection]);
+		$tasks = $tasks->paginate(8)->appends(['sortBy' => $sortBy, 'sortDirection' => $sortDirection]);
 
 		return view('admin.admin-panel', [
 			'tasks' => $tasks,

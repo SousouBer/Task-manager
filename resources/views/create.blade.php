@@ -13,6 +13,7 @@
                 <div>
                     <x-form.input
                         name="name[en]"
+                        value="{{ old('name.en') }}"
                         type="text"
                         placeholder="{{ __('tasks.task_name_englisch') }}"
                     />
@@ -21,6 +22,7 @@
                 <div>
                     <x-form.input
                         name="name[ka]"
+                        value="{{ old('name.ka') }}"
                         type="text"
                         placeholder="{{ __('tasks.task_name_georgian') }}"
                     />
@@ -29,6 +31,7 @@
                 <div>
                     <x-form.textarea
                         name="description[en]"
+                        value="{{ old('description.en') }}"
                         placeholder="{{ __('tasks.description_english') }}"
                     />
                     <x-error-message name="description.en" />
@@ -36,6 +39,7 @@
                 <div>
                     <x-form.textarea
                         name="description[ka]"
+                        value="{{ old('description.ka') }}"
                         placeholder="{{ __('tasks.description_georgian') }}"
                     />
                     <x-error-message name="description.ka" />
@@ -43,6 +47,7 @@
                 <div>
                     <x-form.input
                         name="due_date"
+                        value="{{ old('due_date') }}"
                         type="date"
                         placeholder="{{ __('tasks.due_date') }}"
                     />

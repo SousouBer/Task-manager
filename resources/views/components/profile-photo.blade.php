@@ -1,8 +1,8 @@
 @props(['src', 'name', 'type'])
 
 <div class="flex items-center gap-10" x-data="{ showButton: false}">
-    <div class="{{ $type === 'cover' ? 'rounded-tl-lg' : 'rounded-full' }} w-32 overflow-hidden">
-        <img id="{{ $type }}" src="{{ $src }}" class="w-full" alt="picture" />
+    <div class="{{ $type === 'cover' ? 'rounded-tl-lg' : 'rounded-full' }} h-32 w-32 overflow-hidden">
+        <img id="{{ $type }}" src="{{ $src }}" class="w-full h-full object-cover" alt="picture" />
     </div>
 
     <input class="hidden" x-on:change="handleFileUpload($event.target.files[0],

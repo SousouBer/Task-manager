@@ -13,4 +13,12 @@ class LoginRequest extends FormRequest
 			'password' => 'required|min:4',
 		];
 	}
+
+	public function attributes(): array
+	{
+		return [
+			'email'    => __('auth.email'),
+			'password' => __('auth.password'),
+		];
+	}
 }

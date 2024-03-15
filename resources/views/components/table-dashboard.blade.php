@@ -60,12 +60,12 @@
                                     <p class="whitespace-nowrap overflow-hidden max-w-xs">{{ $task->name }}</p>
                                 </x-table.tdata>
                                 <x-table.tdata class="max-w-lg">
-                                    <p class="whitespace-nowrap overflow-hidden max-w-xs">{{ $task->description }}</p>
+                                    <p class="whitespace-nowrap overflow-hidden">{{ $task->description }}</p>
                                 </x-table.tdata>
                                 <x-table.tdata>{{ $task->created_at->format('Y/m/d') }}</x-table.tdata>
                                 <x-table.tdata style="{{ $task->due_date < now() ? 'color: red;' : '' }}">{{ date('Y/m/d', strtotime($task->due_date)) }}</x-table.tdata>
                                 <x-table.tdata>
-                                     <div class="flex items-center">                               
+                                     <div class="flex items-center gap-2">                               
                                         <form method="POST" action="{{ route('tasks.destroy', ['task' => $task->id]) }}">
                                             @csrf
                                             @method('DELETE')
