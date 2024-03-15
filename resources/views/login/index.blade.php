@@ -1,9 +1,9 @@
 <x-main-layout>
     <section class="flex items-center justify-center">
         <div class="flex items-center justify-center h-screen w-4/5 py-6">
-            <div class="flex-1 flex justify-end h-full">
+            <div class="rounded-tl-xl rounded-bl-xl overflow-hidden flex-1 flex justify-end h-full">
                 <img
-                    class="self-end h-full object-cover"
+                    class="self-end w-full h-full object-cover"
                     src="{{ Storage::disk('public')->exists('images/cover.png') ? asset('storage/images/cover.png') : asset('images/cover.png') }}"
                     alt="Login cover"
                 />
