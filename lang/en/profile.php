@@ -9,6 +9,7 @@ return [
 	'retype_new_password'     => 'Retype new password',
 	'change_photos'           => 'Change photos',
 	'upload_profile'          => 'Upload profile',
+	'upload_cover'            => 'Upload cover',
 	'delete'                  => 'Delete',
 	'change'                  => 'Change',
 ];

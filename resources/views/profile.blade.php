@@ -71,7 +71,7 @@
                         type="cover"
                         name="cover_picture"
                         src="{{ Storage::disk('public')->exists('images/cover.png') ? asset('storage/images/cover.png') : asset('images/cover.png') }}"
-                        >{{ __("profile.upload_profile") }}</x-profile-photo
+                        >{{ __("profile.upload_cover") }}</x-profile-photo
                     >
                 </div>
             </div>
