@@ -13,7 +13,7 @@
                     <x-form.input
                         name="name[en]"
                         type="text"
-                        value="{{ $task->getTranslation('name', 'en') }}"
+                        value="{!! $task->getTranslation('name', 'en') !!}"
                         placeholder="{{ __('tasks.task_name_englisch') }}"
                     />
 
@@ -32,7 +32,7 @@
                     <x-form.textarea
                         name="description[en]"
                         placeholder="{{ __('tasks.description_english') }}"
-                        value="{{ $task->getTranslation('description', 'en') }}"
+                        value="{!! $task->getTranslation('description', 'en') !!}"
                     />
                     <x-error-message name="description.en" />
                 </div>
