@@ -7,6 +7,8 @@
 
 Task management application is the platform which allows people to manage their tasks. In the application. a registered user can add, edit, or delete a task, view the detailed information, see the exact date when it was created, and the date when the task should be completed. Moreover, the application provides an opportunity to update the user's profile, add or change profile pictures.
 
+User can register only using artisan command. And in order to log in the application, you can use the following credentials: email - soso@mail.com, password - soso.
+
 #
 
 ### Table of Contents
